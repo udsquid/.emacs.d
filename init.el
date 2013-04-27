@@ -65,6 +65,10 @@
 (setq save-place-file
       (expand-file-name ".places" user-emacs-directory))
 
+;;; Misc. settings
+;; Setup key bindings
+(require 'key-bindings)
+
 ;; load Mac-specific settings when on Mac system
 (when is-mac (require 'mac))
 ;; load Linux-specific settings when on Linux system
