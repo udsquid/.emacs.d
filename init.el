@@ -44,7 +44,6 @@
 ;; Install extensions if they're missing
 (defun init--install-packages ()
   (packages-install
-   (cons 'ace-jump-mode melpa)
    (cons 'color-theme melpa)
    ))
 
