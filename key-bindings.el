@@ -39,6 +39,10 @@
 (global-set-key (kbd "C-c v") 'eval-buffer)
 (global-set-key (kbd "C-c C-k") 'eval-buffer)
 
+;; Magit
+(global-set-key (kbd "C-x m") 'magit-status)
+(autoload 'magit-status "magit")
+
 ;; Sorting
 (global-set-key (kbd "M-s l") 'sort-lines)
 
