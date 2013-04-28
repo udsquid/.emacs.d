@@ -6,6 +6,9 @@
 (require 'misc)
 (global-set-key (kbd "s-.") 'copy-from-above-command)
 
+;; Expand region (increases selected region by semantic units)
+(global-set-key (kbd "C-'") 'er/expand-region)
+
 ;; Quickly jump in document with ace-jump-mode
 (define-key global-map (kbd "C-s-o") 'ace-jump-mode)
 
