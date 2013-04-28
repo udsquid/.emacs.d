@@ -1,4 +1,9 @@
 ;;; Basic settings
+;; Are we on a mac?
+(setq is-mac (equal system-type 'darwin))
+;; Are we on a linux?
+(setq is-linux (equal system-type 'gnu/linux))
+
 ;; Turn off mouse interface early in startup to avoid momentary display
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
@@ -7,19 +12,24 @@
 ;; No splash screen please ... jeez
 (setq inhibit-startup-message t)
 
-;; Setup load path
-(add-to-list 'load-path user-emacs-directory)
-(add-to-list 'load-path
-	     (concat user-emacs-directory "platform/"))
-(add-to-list 'load-path
-	     (concat user-emacs-directory "setup/"))
-(add-to-list 'load-path
-	     (concat user-emacs-directory "site-lisp/"))
+;; Set path to dependencies
+(setq site-lisp-dir
+      (expand-file-name "site-lisp" user-emacs-directory))
+(setq user-platform-dir
+      (concat user-emacs-directory "platform/"))
+(setq user-setup-dir
+      (concat user-emacs-directory "setup/"))
 
-;; Are we on a mac?
-(setq is-mac (equal system-type 'darwin))
-;; Are we on a linux?
-(setq is-linux (equal system-type 'gnu/linux))
+;; Set up load path
+(add-to-list 'load-path user-emacs-directory)
+(add-to-list 'load-path site-lisp-dir)
+(add-to-list 'load-path user-platform-dir)
+(add-to-list 'load-path user-setup-dir)
+
+;; Add external projects to load path
+(dolist (project (directory-files site-lisp-dir t "\\w+"))
+  (when (file-directory-p project)
+    (add-to-list 'load-path project)))
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file
@@ -53,7 +63,7 @@
    (package-refresh-contents)
    (init--install-packages)))
 
-;; color-theme
+;; Beautiful look
 (require 'color-theme)
 (add-to-list 'custom-theme-load-path
 	     (concat user-emacs-directory "repo/"))
@@ -65,7 +75,7 @@
 (setq save-place-file
       (expand-file-name ".places" user-emacs-directory))
 
-;; ace-jump-mode
+;; Quick jump to anywhere in Emacs
 (autoload 'ace-jump-mode "ace-jump-mode"
   "Emacs quick move minor mode"
   t)
