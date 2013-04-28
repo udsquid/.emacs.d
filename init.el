@@ -64,6 +64,9 @@
    (package-refresh-contents)
    (init--install-packages)))
 
+;; Load packages
+(require 'expand-region)
+
 ;; Beautiful look
 (require 'color-theme)
 (add-to-list 'custom-theme-load-path
