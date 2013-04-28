@@ -11,6 +11,10 @@
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
 (push "/usr/local/bin" exec-path)
 
+;; Setup environment variables and exec-path
+(require 'exec-path-from-shell)
+(exec-path-from-shell-initialize)
+
 ;; Move to trash when deleting stuff
 (setq delete-by-moving-to-trash t
       trash-directory "~/.Trash/emacs")
