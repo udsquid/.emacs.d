@@ -64,6 +64,9 @@
    (package-refresh-contents)
    (init--install-packages)))
 
+;; Lets start with a smattering of sanity
+(require 'sane-defaults)
+
 ;; Load packages
 (require 'expand-region)
 (require 'visual-regexp)
@@ -92,6 +95,8 @@
 	  (lambda () (elisp-slime-nav-mode t) (eldoc-mode 1)))
 
 ;;; Misc. settings
+;; Decide how the Emacs looks like
+(require 'appearance)
 ;; Setup key bindings
 (require 'key-bindings)
 
