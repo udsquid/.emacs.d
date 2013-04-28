@@ -13,3 +13,6 @@
 [submodule "site-lisp/elisp-slime-nav"]
 	path = site-lisp/elisp-slime-nav
 	url = https://github.com/purcell/elisp-slime-nav
+[submodule "site-lisp/smooth-scrolling"]
+	path = site-lisp/smooth-scrolling
+	url = http://github.com/aspiers/smooth-scrolling/
