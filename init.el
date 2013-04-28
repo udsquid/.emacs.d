@@ -55,6 +55,7 @@
 (defun init--install-packages ()
   (packages-install
    (cons 'color-theme melpa)
+   (cons 'magit melpa)
    ))
 
 (condition-case nil
