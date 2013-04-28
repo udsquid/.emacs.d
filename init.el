@@ -67,6 +67,7 @@
 ;; Load packages
 (require 'expand-region)
 (require 'visual-regexp)
+(require 'elisp-slime-nav)
 
 ;; Beautiful look
 (require 'color-theme)
@@ -84,6 +85,11 @@
 (autoload 'ace-jump-mode "ace-jump-mode"
   "Emacs quick move minor mode"
   t)
+
+;; Elisp go-to-definition with M-. and back again with M-,
+(autoload 'elisp-slime-nav-mode "elisp-slime-nav")
+(add-hook 'emacs-lisp-mode-hook
+	  (lambda () (elisp-slime-nav-mode t) (eldoc-mode 1)))
 
 ;;; Misc. settings
 ;; Setup key bindings

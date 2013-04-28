@@ -10,3 +10,6 @@
 [submodule "site-lisp/visual-regexp"]
 	path = site-lisp/visual-regexp
 	url = https://github.com/benma/visual-regexp.el/
+[submodule "site-lisp/elisp-slime-nav"]
+	path = site-lisp/elisp-slime-nav
+	url = https://github.com/purcell/elisp-slime-nav
