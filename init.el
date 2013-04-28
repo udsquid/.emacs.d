@@ -56,6 +56,7 @@
   (packages-install
    (cons 'color-theme melpa)
    (cons 'magit melpa)
+   (cons 'undo-tree melpa)
    ))
 
 (condition-case nil
