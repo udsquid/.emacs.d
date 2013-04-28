@@ -38,6 +38,11 @@
 (global-set-key (kbd "C-S-f") (lambda () (interactive) (ignore-errors (forward-char 5))))
 (global-set-key (kbd "C-S-b") (lambda () (interactive) (ignore-errors (backward-char 5))))
 
+;; Visual regexp
+(require 'visual-regexp)
+(define-key global-map (kbd "M-&") 'vr/query-replace)
+(define-key global-map (kbd "M-/") 'vr/replace)
+
 ;; Eval buffer
 (global-set-key (kbd "C-c v") 'eval-buffer)
 (global-set-key (kbd "C-c C-k") 'eval-buffer)

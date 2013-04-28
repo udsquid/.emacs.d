@@ -66,6 +66,7 @@
 
 ;; Load packages
 (require 'expand-region)
+(require 'visual-regexp)
 
 ;; Beautiful look
 (require 'color-theme)

@@ -7,3 +7,6 @@
 [submodule "site-lisp/exec-path-from-shell"]
 	path = site-lisp/exec-path-from-shell
 	url = https://github.com/purcell/exec-path-from-shell
+[submodule "site-lisp/visual-regexp"]
+	path = site-lisp/visual-regexp
+	url = https://github.com/benma/visual-regexp.el/
