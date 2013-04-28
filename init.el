@@ -65,6 +65,11 @@
 (setq save-place-file
       (expand-file-name ".places" user-emacs-directory))
 
+;; ace-jump-mode
+(autoload 'ace-jump-mode "ace-jump-mode"
+  "Emacs quick move minor mode"
+  t)
+
 ;;; Misc. settings
 ;; Setup key bindings
 (require 'key-bindings)
