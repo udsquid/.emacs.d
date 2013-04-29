@@ -3,6 +3,11 @@
 (global-set-key (kbd "C-x r q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "C-x C-c") 'delete-frame)
 
+;; Completion that uses many different methods to find options.
+(global-set-key (kbd "C-.") 'hippie-expand-no-case-fold)
+(global-set-key (kbd "C-:") 'hippie-expand-lines)
+(global-set-key (kbd "C-,") 'completion-at-point)
+
 (require 'misc)
 (global-set-key (kbd "s-.") 'copy-from-above-command)
 
@@ -39,9 +44,6 @@
 ;; Navigation bindings
 (global-set-key (kbd "M-p") 'backward-paragraph)
 (global-set-key (kbd "M-n") 'forward-paragraph)
-
-;; Completion at point
-(global-set-key (kbd "C-<tab>") 'completion-at-point)
 
 ;; Move more quickly
 (global-set-key (kbd "C-S-n") (lambda () (interactive) (ignore-errors (next-line 5))))

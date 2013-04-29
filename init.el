@@ -74,6 +74,7 @@
 (eval-after-load 'dired '(require 'setup-dired))
 (eval-after-load 'shell '(require 'setup-shell))
 (require 'setup-ido)
+(require 'setup-hippie)
 
 ;; Load packages
 (require 'expand-region)
