@@ -16,3 +16,9 @@
 [submodule "site-lisp/smooth-scrolling"]
 	path = site-lisp/smooth-scrolling
 	url = http://github.com/aspiers/smooth-scrolling/
+[submodule "site-lisp/ido-ubiquitous"]
+	path = site-lisp/ido-ubiquitous
+	url = https://github.com/DarwinAwardWinner/ido-ubiquitous
+[submodule "site-lisp/ido-better-flex"]
+	path = site-lisp/ido-better-flex
+	url = http://github.com/vic/ido-better-flex

@@ -68,6 +68,9 @@
 ;; Lets start with a smattering of sanity
 (require 'sane-defaults)
 
+;; Setup extensions
+(require 'setup-ido)
+
 ;; Load packages
 (require 'expand-region)
 (require 'visual-regexp)
