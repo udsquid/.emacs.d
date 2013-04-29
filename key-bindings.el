@@ -67,6 +67,9 @@
 ;; Sorting
 (global-set-key (kbd "M-s l") 'sort-lines)
 
+;; Browse the kill ring
+(global-set-key (kbd "C-x C-y") 'browse-kill-ring)
+
 ;; Jump from file to containing directory
 (global-set-key (kbd "C-x C-j") 'dired-jump) (autoload 'dired-jump "dired")
 (global-set-key (kbd "C-x M-j") '(lambda () (interactive) (dired-jump 1)))

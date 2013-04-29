@@ -104,6 +104,10 @@
 (add-hook 'emacs-lisp-mode-hook
 	  (lambda () (elisp-slime-nav-mode t) (eldoc-mode 1)))
 
+;; Browse kill ring
+(require 'browse-kill-ring)
+(setq browse-kill-ring-quit-action 'save-and-restore)
+
 ;;; Misc. settings
 ;; Decide how the Emacs looks like
 (require 'appearance)
