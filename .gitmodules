@@ -40,3 +40,6 @@
 [submodule "site-lisp/jump-char"]
 	path = site-lisp/jump-char
 	url = https://github.com/lewang/jump-char
+[submodule "site-lisp/change-inner"]
+	path = site-lisp/change-inner
+	url = https://github.com/magnars/change-inner.el.git

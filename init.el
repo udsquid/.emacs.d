@@ -83,6 +83,7 @@
 (require 'elisp-slime-nav)
 (require 'multiple-cursors)
 (require 'jump-char)
+(require 'change-inner)
 
 ;; Beautiful look
 (require 'color-theme)

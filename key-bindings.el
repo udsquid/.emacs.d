@@ -73,6 +73,13 @@
 (global-set-key (kbd "M-M") 'jump-char-backward)
 (global-set-key (kbd "s-m") 'jump-char-backward)
 
+;; vim's ci and co commands
+(global-set-key (kbd "M-I") 'change-inner)
+(global-set-key (kbd "M-O") 'change-outer)
+
+(global-set-key (kbd "s-i") 'copy-inner)
+(global-set-key (kbd "s-o") 'copy-outer)
+
 ;; Jump to a definition in the current file. (This is awesome)
 (global-set-key (kbd "C-x C-i") 'ido-imenu)
 
