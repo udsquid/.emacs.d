@@ -15,6 +15,10 @@
 ;; M-i for back-to-indentation
 (global-set-key (kbd "M-i") 'back-to-indentation)
 
+;; Make shell more convenient, and suspend-frame less
+(global-set-key (kbd "C-z") 'shell)
+(global-set-key (kbd "C-x M-z") 'suspend-frame)
+
 ;; Zap to char
 (global-set-key (kbd "M-z") 'zap-up-to-char)
 (global-set-key (kbd "s-z") (lambda (char) (interactive "cZap up to char backwards: ") (zap-up-to-char -1 char)))

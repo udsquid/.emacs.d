@@ -58,6 +58,7 @@
    (cons 'magit melpa)
    (cons 'undo-tree melpa)
    (cons 'dired-details melpa)
+   (cons 'shell-command melpa)
    ))
 
 (condition-case nil
@@ -71,6 +72,7 @@
 
 ;; Setup extensions
 (eval-after-load 'dired '(require 'setup-dired))
+(eval-after-load 'shell '(require 'setup-shell))
 (require 'setup-ido)
 
 ;; Load packages
