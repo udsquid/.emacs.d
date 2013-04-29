@@ -81,6 +81,7 @@
 (require 'expand-region)
 (require 'visual-regexp)
 (require 'elisp-slime-nav)
+(require 'multiple-cursors)
 
 ;; Beautiful look
 (require 'color-theme)

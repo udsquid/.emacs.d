@@ -22,6 +22,35 @@
 ;; Expand region (increases selected region by semantic units)
 (global-set-key (kbd "C-'") 'er/expand-region)
 
+;; Experimental multiple-cursors
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C-S-c C-e") 'mc/edit-ends-of-lines)
+(global-set-key (kbd "C-S-c C-a") 'mc/edit-beginnings-of-lines)
+
+;; Mark additional regions matching current region
+(global-set-key (kbd "C-s-a") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-s-\'") 'mc/mark-next-like-this)
+(global-set-key (kbd "M-s-\'") 'mc/mark-all-like-this-dwim)
+
+(global-set-key (kbd "C-s-\"") 'mc/mark-more-like-this-extended)
+(global-set-key (kbd "M-s-a") 'mc/mark-all-in-region)
+
+;; Symbol and word specific mark-more
+(global-set-key (kbd "s-a") 'mc/mark-previous-word-like-this)
+(global-set-key (kbd "s-\'") 'mc/mark-next-word-like-this)
+(global-set-key (kbd "M-s-\'") 'mc/mark-all-words-like-this)
+
+(global-set-key (kbd "s-A") 'mc/mark-previous-symbol-like-this)
+(global-set-key (kbd "s-\"") 'mc/mark-next-symbol-like-this)
+(global-set-key (kbd "M-s-\"") 'mc/mark-all-symbols-like-this)
+
+;; Extra multiple cursors stuff
+(global-set-key (kbd "C-~") 'mc/reverse-regions)
+(global-set-key (kbd "M-~") 'mc/sort-regions)
+(global-set-key (kbd "H-~") 'mc/insert-numbers)
+
+(global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
+
 ;; Quickly jump in document with ace-jump-mode
 (define-key global-map (kbd "C-s-o") 'ace-jump-mode)
 

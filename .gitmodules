@@ -34,3 +34,6 @@
 [submodule "site-lisp/smex"]
 	path = site-lisp/smex
 	url = https://github.com/nonsequitur/smex.git
+[submodule "site-lisp/multiple-cursors"]
+	path = site-lisp/multiple-cursors
+	url = https://github.com/magnars/multiple-cursors.el
