@@ -82,6 +82,7 @@
 (require 'visual-regexp)
 (require 'elisp-slime-nav)
 (require 'multiple-cursors)
+(require 'jump-char)
 
 ;; Beautiful look
 (require 'color-theme)
