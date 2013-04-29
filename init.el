@@ -108,6 +108,10 @@
 (require 'browse-kill-ring)
 (setq browse-kill-ring-quit-action 'save-and-restore)
 
+;; Smart M-x is smart
+(require 'smex)
+(smex-initialize)
+
 ;;; Misc. settings
 ;; Decide how the Emacs looks like
 (require 'appearance)
