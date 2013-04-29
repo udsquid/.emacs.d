@@ -22,6 +22,13 @@
 (global-set-key (kbd "M-Z") 'zap-to-char)
 (global-set-key (kbd "s-Z") (lambda (char) (interactive "cZap to char backwards: ") (zap-to-char -1 char)))
 
+;; Jump to a definition in the current file. (This is awesome)
+(global-set-key (kbd "C-x C-i") 'ido-imenu)
+
+;; File finding
+(global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
+(global-set-key (kbd "C-x f") 'recentf-ido-find-file)
+
 ;; Indentation help
 (global-set-key (kbd "M-j") (lambda () (interactive) (join-line -1)))
 
