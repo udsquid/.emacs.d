@@ -75,6 +75,7 @@
 (eval-after-load 'shell '(require 'setup-shell))
 (require 'setup-ido)
 (require 'setup-hippie)
+(require 'setup-yasnippet)
 
 ;; Load packages
 (require 'expand-region)

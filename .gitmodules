@@ -25,3 +25,6 @@
 [submodule "site-lisp/dash"]
 	path = site-lisp/dash
 	url = https://github.com/magnars/dash.el
+[submodule "site-lisp/yasnippet"]
+	path = site-lisp/yasnippet
+	url = http://github.com/capitaomorte/yasnippet
