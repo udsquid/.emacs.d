@@ -57,6 +57,7 @@
    (cons 'color-theme melpa)
    (cons 'magit melpa)
    (cons 'undo-tree melpa)
+   (cons 'dired-details melpa)
    ))
 
 (condition-case nil
@@ -69,6 +70,7 @@
 (require 'sane-defaults)
 
 ;; Setup extensions
+(eval-after-load 'dired '(require 'setup-dired))
 (require 'setup-ido)
 
 ;; Load packages

@@ -61,4 +61,11 @@
 ;; Sorting
 (global-set-key (kbd "M-s l") 'sort-lines)
 
+;; Jump from file to containing directory
+(global-set-key (kbd "C-x C-j") 'dired-jump) (autoload 'dired-jump "dired")
+(global-set-key (kbd "C-x M-j") '(lambda () (interactive) (dired-jump 1)))
+
+;; Find files by name and display results in dired
+(global-set-key (kbd "M-s f") 'find-name-dired)
+
 (provide 'key-bindings)
