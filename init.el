@@ -74,6 +74,7 @@
 (eval-after-load 'dired '(require 'setup-dired))
 (eval-after-load 'shell '(require 'setup-shell))
 (eval-after-load 'magit '(require 'setup-magit))
+(eval-after-load 'grep '(require 'setup-rgrep))
 (require 'setup-ido)
 (require 'setup-hippie)
 (require 'setup-yasnippet)

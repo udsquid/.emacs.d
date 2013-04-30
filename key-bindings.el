@@ -123,6 +123,10 @@
 (global-set-key (kbd "C-x C-j") 'dired-jump) (autoload 'dired-jump "dired")
 (global-set-key (kbd "C-x M-j") '(lambda () (interactive) (dired-jump 1)))
 
+;; Easy-mode fullscreen rgrep
+;; (global-set-key (kbd "M-s s") 'git-grep-fullscreen)
+(global-set-key (kbd "M-s S") 'rgrep-fullscreen)
+
 ;; Find files by name and display results in dired
 (global-set-key (kbd "M-s f") 'find-name-dired)
 
