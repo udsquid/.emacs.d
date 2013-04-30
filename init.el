@@ -59,6 +59,7 @@
    (cons 'undo-tree melpa)
    (cons 'dired-details melpa)
    (cons 'shell-command melpa)
+   (cons 'bash-completion melpa)
    ))
 
 (condition-case nil
