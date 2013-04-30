@@ -49,8 +49,4 @@
 (ido-ubiquitous-use-new-completing-read yas/expand 'yasnippet)
 (ido-ubiquitous-use-new-completing-read yas/visit-snippet-file 'yasnippet)
 
-;; Fuzzy matching algorithm
-(require 'ido-better-flex)
-(ido-better-flex/enable)
-
 (provide 'setup-ido)
