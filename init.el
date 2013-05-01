@@ -122,6 +122,9 @@
 (require 'smex)
 (smex-initialize)
 
+;; Default setup of smartparens
+(require 'smartparens-config)
+
 ;;; Misc. settings
 ;; Decide how the Emacs looks like
 (require 'appearance)
