@@ -52,3 +52,6 @@
 [submodule "site-lisp/magit"]
 	path = site-lisp/magit
 	url = https://github.com/magit/magit.git
+[submodule "site-lisp/tagedit"]
+	path = site-lisp/tagedit
+	url = https://github.com/magnars/tagedit.git
