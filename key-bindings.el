@@ -94,6 +94,11 @@
 (global-set-key (kbd "M-p") 'backward-paragraph)
 (global-set-key (kbd "M-n") 'forward-paragraph)
 
+(global-set-key (kbd "M-<up>") 'smart-up)
+(global-set-key (kbd "M-<down>") 'smart-down)
+(global-set-key (kbd "M-<left>") 'smart-backward)
+(global-set-key (kbd "M-<right>") 'smart-forward)
+
 ;; Move more quickly
 (global-set-key (kbd "C-S-n") (lambda () (interactive) (ignore-errors (next-line 5))))
 (global-set-key (kbd "C-S-p") (lambda () (interactive) (ignore-errors (previous-line 5))))

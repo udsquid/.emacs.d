@@ -97,6 +97,7 @@
 (require 'jump-char)
 (require 'change-inner)
 (require 'wgrep)
+(require 'smart-forward)
 
 ;; Beautiful look
 (require 'color-theme)
