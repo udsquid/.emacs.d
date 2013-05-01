@@ -54,8 +54,32 @@
 ;; Quickly jump in document with ace-jump-mode
 (define-key global-map (kbd "C-s-o") 'ace-jump-mode)
 
+;; Perform general cleanup.
+(global-set-key (kbd "C-c n") 'cleanup-buffer)
+(global-set-key (kbd "C-c C-<return>") 'delete-blank-lines)
+
 ;; M-i for back-to-indentation
 (global-set-key (kbd "M-i") 'back-to-indentation)
+
+;; Transpose stuff with M-t
+(global-unset-key (kbd "M-t")) ;; which used to be transpose-words
+(global-set-key (kbd "M-t l") 'transpose-lines)
+(global-set-key (kbd "M-t w") 'transpose-words)
+(global-set-key (kbd "M-t s") 'transpose-sexps)
+(global-set-key (kbd "M-t p") 'transpose-params)
+
+;; Change next underscore with a camel case
+(global-set-key (kbd "C-c C--") 'replace-next-underscore-with-camel)
+(global-set-key (kbd "M-s M--") 'snakeify-current-word)
+
+;; Killing text
+(global-set-key (kbd "C-S-k") 'kill-and-retry-line)
+(global-set-key (kbd "C-w") 'kill-region-or-backward-word)
+(global-set-key (kbd "C-c C-w") 'kill-to-beginning-of-line)
+
+;; Use M-w for copy-line if no active region
+(global-set-key (kbd "M-w") 'save-region-or-current-line)
+(global-set-key (kbd "M-W") '(lambda () (interactive) (save-region-or-current-line 1)))
 
 ;; Make shell more convenient, and suspend-frame less
 (global-set-key (kbd "C-z") 'shell)
@@ -86,11 +110,43 @@
 ;; File finding
 (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
 (global-set-key (kbd "C-x f") 'recentf-ido-find-file)
+(global-set-key (kbd "C-x C-p") 'find-or-create-file-at-point)
+(global-set-key (kbd "C-x M-p") 'find-or-create-file-at-point-other-window)
+(global-set-key (kbd "C-c y") 'bury-buffer)
+(global-set-key (kbd "C-c r") 'revert-buffer)
+(global-set-key (kbd "M-`") 'file-cache-minibuffer-complete)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
+;; toggle two most recent buffers
+(fset 'quick-switch-buffer [?\C-x ?b return])
+(global-set-key (kbd "s-j") 'quick-switch-buffer)
+
+;; Revert without any fuss
+(global-set-key (kbd "M-<escape>")
+                (lambda () (interactive) (revert-buffer t t)))
+
+;; Edit file with sudo
+(global-set-key (kbd "M-s e") 'sudo-edit)
+
+;; Copy file path to kill ring
+(global-set-key (kbd "C-x M-w") 'copy-current-file-path)
+
+;; Window switching
+(windmove-default-keybindings) ;; Shift+direction
+(global-unset-key (kbd "C-x C-+")) ;; don't zoom like this
+
+(global-set-key (kbd "C-x 2") 'split-window-down-and-move-there-dammit)
+(global-set-key (kbd "C-x 3") 'split-window-right-and-move-there-dammit)
 
 ;; Indentation help
 (global-set-key (kbd "M-j") (lambda () (interactive) (join-line -1)))
 
+;; Should be able to eval-and-replace anywhere.
+(global-set-key (kbd "C-c C-e") 'eval-and-replace)
+
 ;; Navigation bindings
+(global-set-key [remap goto-line] 'goto-line-with-feedback)
+
 (global-set-key (kbd "M-p") 'backward-paragraph)
 (global-set-key (kbd "M-n") 'forward-paragraph)
 
@@ -110,19 +166,57 @@
 (define-key global-map (kbd "M-&") 'vr/query-replace)
 (define-key global-map (kbd "M-/") 'vr/replace)
 
+;; Yank selection in isearch
+(define-key isearch-mode-map (kbd "C-o") 'isearch-yank-selection)
+
 ;; Eval buffer
 (global-set-key (kbd "C-c v") 'eval-buffer)
 (global-set-key (kbd "C-c C-k") 'eval-buffer)
+
+;; Create scratch buffer
+(global-set-key (kbd "C-c b") 'create-scratch-buffer)
+
+;; Move windows, even in org-mode
+(global-set-key (kbd "<s-right>") 'windmove-right)
+(global-set-key (kbd "<s-left>") 'windmove-left)
+(global-set-key (kbd "<s-up>") 'windmove-up)
+(global-set-key (kbd "<s-down>") 'windmove-down)
 
 ;; Magit
 (global-set-key (kbd "C-x m") 'magit-status)
 (autoload 'magit-status "magit")
 
+;; Clever newlines
+(global-set-key (kbd "<C-return>") 'open-line-below)
+(global-set-key (kbd "<C-S-return>") 'open-line-above)
+(global-set-key (kbd "<M-return>") 'new-line-in-between)
+
+;; Duplicate region
+(global-set-key (kbd "C-c d") 'duplicate-current-line-or-region)
+
+;; Line movement
+(global-set-key (kbd "<C-S-down>") 'move-text-down)
+(global-set-key (kbd "<C-S-up>") 'move-text-up)
+
+;; Yank and indent
+(global-set-key (kbd "C-S-y") 'yank-unindented)
+
+;; Toggle quotes
+(global-set-key (kbd "C-\"") 'toggle-quotes)
+
 ;; Sorting
 (global-set-key (kbd "M-s l") 'sort-lines)
 
+;; Increase number at point (or other change based on prefix arg)
+(global-set-key (kbd "C-+") 'change-number-at-point)
+
 ;; Browse the kill ring
 (global-set-key (kbd "C-x C-y") 'browse-kill-ring)
+
+;; Buffer file functions
+(global-set-key (kbd "C-x t") 'touch-buffer-file)
+(global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
+(global-set-key (kbd "C-x C-k") 'delete-current-buffer-file)
 
 ;; Jump from file to containing directory
 (global-set-key (kbd "C-x C-j") 'dired-jump) (autoload 'dired-jump "dired")
@@ -132,8 +226,17 @@
 ;; (global-set-key (kbd "M-s s") 'git-grep-fullscreen)
 (global-set-key (kbd "M-s S") 'rgrep-fullscreen)
 
-;; Find files by name and display results in dired
-(global-set-key (kbd "M-s f") 'find-name-dired)
+;; Multi-occur
+(global-set-key (kbd "M-s m") 'multi-occur)
+(global-set-key (kbd "M-s M") 'multi-occur-in-matching-buffers)
+
+;; Display and edit occurances of regexp in buffer
+(global-set-key (kbd "C-c o") 'occur)
+
+;; View occurrence in occur mode
+(define-key occur-mode-map (kbd "v") 'occur-mode-display-occurrence)
+(define-key occur-mode-map (kbd "n") 'next-line)
+(define-key occur-mode-map (kbd "p") 'previous-line)
 
 ;; Find files by name and display results in dired
 (global-set-key (kbd "M-s f") 'find-name-dired)
@@ -143,10 +246,8 @@
 
 ;; Find file in project, with specific patterns
 (global-unset-key (kbd "C-x C-o")) ;; which used to be delete-blank-lines (also bound to C-c C-<return>)
-(global-set-key (kbd "C-x C-o js") (ffip-create-pattern-file-finder "*.js"))
-(global-set-key (kbd "C-x C-o cs") (ffip-create-pattern-file-finder "*.css"))
 (global-set-key (kbd "C-x C-o el") (ffip-create-pattern-file-finder "*.el"))
+(global-set-key (kbd "C-x C-o md") (ffip-create-pattern-file-finder "*.md"))
 (global-set-key (kbd "C-x C-o tx") (ffip-create-pattern-file-finder "*.txt"))
-(global-set-key (kbd "C-x C-o py") (ffip-create-pattern-file-finder "*.py"))
 
 (provide 'key-bindings)

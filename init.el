@@ -54,12 +54,12 @@
 ;; Install extensions if they're missing
 (defun init--install-packages ()
   (packages-install
-   (cons 'color-theme melpa)
-   (cons 'undo-tree melpa)
-   (cons 'dired-details melpa)
-   (cons 'shell-command melpa)
    (cons 'bash-completion melpa)
+   (cons 'color-theme melpa)
+   (cons 'dired-details melpa)
    (cons 'paredit melpa)
+   (cons 'shell-command melpa)
+   (cons 'undo-tree melpa)
    ))
 
 (condition-case nil
@@ -73,15 +73,15 @@
 
 ;; Setup extensions
 (eval-after-load 'dired '(require 'setup-dired))
-(eval-after-load 'shell '(require 'setup-shell))
-(eval-after-load 'magit '(require 'setup-magit))
 (eval-after-load 'grep '(require 'setup-rgrep))
-(require 'setup-ido)
-(require 'setup-hippie)
-(require 'setup-yasnippet)
+(eval-after-load 'magit '(require 'setup-magit))
+(eval-after-load 'shell '(require 'setup-shell))
 (require 'setup-ffip)
-(require 'setup-paredit)
+(require 'setup-hippie)
 (require 'setup-html-mode)
+(require 'setup-ido)
+(require 'setup-paredit)
+(require 'setup-yasnippet)
 
 ;; Functions (load all files in defuns-dir)
 (setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
@@ -90,14 +90,15 @@
     (load file)))
 
 ;; Load packages
-(require 'expand-region)
-(require 'visual-regexp)
-(require 'elisp-slime-nav)
-(require 'multiple-cursors)
-(require 'jump-char)
 (require 'change-inner)
-(require 'wgrep)
+(require 'elisp-slime-nav)
+(require 'eproject)
+(require 'expand-region)
+(require 'jump-char)
+(require 'multiple-cursors)
 (require 'smart-forward)
+(require 'visual-regexp)
+(require 'wgrep)
 
 ;; Beautiful look
 (require 'color-theme)
