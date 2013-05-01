@@ -81,6 +81,7 @@
 (require 'setup-yasnippet)
 (require 'setup-ffip)
 (require 'setup-paredit)
+(require 'setup-html-mode)
 
 ;; Load packages
 (require 'expand-region)
