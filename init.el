@@ -55,7 +55,6 @@
 (defun init--install-packages ()
   (packages-install
    (cons 'color-theme melpa)
-   (cons 'magit melpa)
    (cons 'undo-tree melpa)
    (cons 'dired-details melpa)
    (cons 'shell-command melpa)
@@ -89,6 +88,7 @@
 (require 'multiple-cursors)
 (require 'jump-char)
 (require 'change-inner)
+(require 'wgrep)
 
 ;; Beautiful look
 (require 'color-theme)
