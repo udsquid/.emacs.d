@@ -80,6 +80,7 @@
 (require 'setup-ido)
 (require 'setup-hippie)
 (require 'setup-yasnippet)
+(require 'setup-ffip)
 
 ;; Load packages
 (require 'expand-region)

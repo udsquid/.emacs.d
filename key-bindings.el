@@ -130,4 +130,18 @@
 ;; Find files by name and display results in dired
 (global-set-key (kbd "M-s f") 'find-name-dired)
 
+;; Find files by name and display results in dired
+(global-set-key (kbd "M-s f") 'find-name-dired)
+
+;; Find file in project
+(global-set-key (kbd "C-x o") 'find-file-in-project)
+
+;; Find file in project, with specific patterns
+(global-unset-key (kbd "C-x C-o")) ;; which used to be delete-blank-lines (also bound to C-c C-<return>)
+(global-set-key (kbd "C-x C-o js") (ffip-create-pattern-file-finder "*.js"))
+(global-set-key (kbd "C-x C-o cs") (ffip-create-pattern-file-finder "*.css"))
+(global-set-key (kbd "C-x C-o el") (ffip-create-pattern-file-finder "*.el"))
+(global-set-key (kbd "C-x C-o tx") (ffip-create-pattern-file-finder "*.txt"))
+(global-set-key (kbd "C-x C-o py") (ffip-create-pattern-file-finder "*.py"))
+
 (provide 'key-bindings)
