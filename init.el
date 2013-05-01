@@ -59,6 +59,7 @@
    (cons 'dired-details melpa)
    (cons 'shell-command melpa)
    (cons 'bash-completion melpa)
+   (cons 'paredit melpa)
    ))
 
 (condition-case nil
@@ -79,6 +80,7 @@
 (require 'setup-hippie)
 (require 'setup-yasnippet)
 (require 'setup-ffip)
+(require 'setup-paredit)
 
 ;; Load packages
 (require 'expand-region)
