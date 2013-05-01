@@ -130,6 +130,8 @@
 (require 'appearance)
 ;; Setup key bindings
 (require 'key-bindings)
+;; Map files to modes
+(require 'mode-mappings)
 
 ;; load Mac-specific settings when on Mac system
 (when is-mac (require 'mac))
