@@ -94,6 +94,7 @@
 (require 'elisp-slime-nav)
 (require 'eproject)
 (require 'expand-region)
+(require 'fold-this)
 (require 'jump-char)
 (require 'multiple-cursors)
 (require 'smart-forward)

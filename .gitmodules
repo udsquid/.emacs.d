@@ -64,3 +64,6 @@
 [submodule "site-lisp/eproject"]
 	path = site-lisp/eproject
 	url = git://github.com/jrockway/eproject
+[submodule "site-lisp/fold-this"]
+	path = site-lisp/fold-this
+	url = https://github.com/magnars/fold-this.el.git
