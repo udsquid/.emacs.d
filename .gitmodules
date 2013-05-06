@@ -67,3 +67,6 @@
 [submodule "site-lisp/fold-this"]
 	path = site-lisp/fold-this
 	url = https://github.com/magnars/fold-this.el.git
+[submodule "site-lisp/color-theme-tangotango"]
+	path = site-lisp/color-theme-tangotango
+	url = https://github.com/juba/color-theme-tangotango.git

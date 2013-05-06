@@ -14,7 +14,7 @@
 
 ;; Set path to dependencies
 (setq site-lisp-dir
-      (expand-file-name "site-lisp" user-emacs-directory))
+      (expand-file-name "site-lisp/" user-emacs-directory))
 (setq user-platform-dir
       (concat user-emacs-directory "platform/"))
 (setq user-setup-dir
@@ -55,7 +55,6 @@
 (defun init--install-packages ()
   (packages-install
    (cons 'bash-completion melpa)
-   (cons 'color-theme melpa)
    (cons 'dired-details melpa)
    (cons 'paredit melpa)
    (cons 'shell-command melpa)
@@ -101,10 +100,13 @@
 (require 'visual-regexp)
 (require 'wgrep)
 
-;; Beautiful look
-(require 'color-theme)
+;; ;; Beautiful look
+;; (require 'color-theme)
+;; (add-to-list 'custom-theme-load-path
+;; 	     (concat user-emacs-directory "repo/"))
+;; (load-theme 'tangotango t)
 (add-to-list 'custom-theme-load-path
-	     (concat user-emacs-directory "repo/"))
+             (concat site-lisp-dir "color-theme-tangotango/"))
 (load-theme 'tangotango t)
 
 ;; Save point position between sessions
