@@ -100,11 +100,7 @@
 (require 'visual-regexp)
 (require 'wgrep)
 
-;; ;; Beautiful look
-;; (require 'color-theme)
-;; (add-to-list 'custom-theme-load-path
-;; 	     (concat user-emacs-directory "repo/"))
-;; (load-theme 'tangotango t)
+;; Beautiful look
 (add-to-list 'custom-theme-load-path
              (concat site-lisp-dir "color-theme-tangotango/"))
 (load-theme 'tangotango t)
