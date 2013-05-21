@@ -33,4 +33,7 @@
 ;; Wrap around region
 (setq yas/wrap-around-region t)
 
+;; No indent for me
+(setq yas/indent-line nil)
+
 (provide 'setup-yasnippet)
