@@ -95,6 +95,7 @@
 (require 'expand-region)
 (require 'fold-this)
 (require 'jump-char)
+(require 'move-text)
 (require 'multiple-cursors)
 (require 'smart-forward)
 (require 'visual-regexp)
