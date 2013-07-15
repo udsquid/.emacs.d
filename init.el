@@ -3,6 +3,8 @@
 (setq is-mac (equal system-type 'darwin))
 ;; Are we on a linux?
 (setq is-linux (equal system-type 'gnu/linux))
+;; Are we on windows?
+(setq is-windows (equal system-type 'windows-nt))
 
 ;; Turn off mouse interface early in startup to avoid momentary display
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
@@ -46,6 +48,8 @@
 
 ;; Use SSH as tramp method
 (setq tramp-default-method "ssh")
+;; sudo edit remote file
+(set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
 
 ;;; Prepare packages
 ;; Setup packages
@@ -145,3 +149,5 @@
 (when is-mac (require 'mac))
 ;; load Linux-specific settings when on Linux system
 (when is-linux (require 'linux))
+;; load Windows-specific settings when on Windows system
+(when is-windows (require 'windows))
