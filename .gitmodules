@@ -82,3 +82,6 @@
 [submodule "site-lisp/js2-refactor"]
 	path = site-lisp/js2-refactor
 	url = https://github.com/magnars/js2-refactor.el
+[submodule "site-lisp/mark-multiple"]
+	path = site-lisp/mark-multiple
+	url = https://github.com/magnars/mark-multiple.el.git
