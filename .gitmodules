@@ -73,3 +73,6 @@
 [submodule "site-lisp/emacs-bash-completion"]
 	path = site-lisp/emacs-bash-completion
 	url = https://github.com/szermatt/emacs-bash-completion
+[submodule "site-lisp/zencoding"]
+	path = site-lisp/zencoding
+	url = https://github.com/rooney/zencoding

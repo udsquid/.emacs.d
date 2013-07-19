@@ -56,4 +56,6 @@
      (define-key html-mode-map (kbd "s-k") 'tagedit-kill-attribute)
      (define-key html-mode-map (kbd "s-<return>") 'tagedit-toggle-multiline-tag)))
 
+(add-hook 'sgml-mode-hook 'zencoding-mode)
+
 (provide 'setup-html-mode)
