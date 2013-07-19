@@ -65,4 +65,8 @@
 (defadvice sgml-close-tag (after close-tag-then-newline activate)
   (newline-and-indent))
 
+;; enable js2-refactor
+(require 'js2-refactor)
+(js2r-add-keybindings-with-prefix "C-c C-m")
+
 (provide 'setup-html-mode)

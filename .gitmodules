@@ -76,9 +76,6 @@
 [submodule "site-lisp/zencoding"]
 	path = site-lisp/zencoding
 	url = https://github.com/rooney/zencoding
-[submodule "site-lisp/mark-multiple"]
-	path = site-lisp/mark-multiple
-	url = https://github.com/magnars/multiple-cursors.el
 [submodule "site-lisp/js2-mode"]
 	path = site-lisp/js2-mode
 	url = https://github.com/mooz/js2-mode/
