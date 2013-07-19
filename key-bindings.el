@@ -255,7 +255,4 @@
 (global-set-key (kbd "C-x C-o md") (ffip-create-pattern-file-finder "*.md"))
 (global-set-key (kbd "C-x C-o tx") (ffip-create-pattern-file-finder "*.txt"))
 
-;; Zencoding in html mode
-(define-key html-mode-map (kbd "C-c C-j") 'zencoding-expand-line)
-
 (provide 'key-bindings)

@@ -32,6 +32,10 @@
 
 (add-hook 'sgml-mode-hook '--setup-simplezen)
 
+;; Newline after inserting closing tag in html-mode
+(defadvice sgml-close-tag (after close-tag-then-newline activate)
+  (newline-and-indent))
+
 (eval-after-load "sgml-mode"
   '(progn
      (define-key html-mode-map [remap forward-paragraph] 'skip-to-next-blank-line)
@@ -54,8 +58,10 @@
 
      ;; no paredit equivalents
      (define-key html-mode-map (kbd "s-k") 'tagedit-kill-attribute)
-     (define-key html-mode-map (kbd "s-<return>") 'tagedit-toggle-multiline-tag)))
+     (define-key html-mode-map (kbd "s-<return>") 'tagedit-toggle-multiline-tag)
 
-(add-hook 'sgml-mode-hook 'zencoding-mode)
+     ;; enable zencoding
+     (add-hook 'sgml-mode-hook 'zencoding-mode)
+     (define-key html-mode-map (kbd "C-c C-j") 'zencoding-expand-line)))
 
 (provide 'setup-html-mode)
