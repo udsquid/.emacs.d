@@ -59,7 +59,12 @@
      ;; enable zencoding
      (require 'zencoding-mode)
      (add-hook 'sgml-mode-hook 'zencoding-mode)
-     (define-key html-mode-map (kbd "C-c C-j") 'zencoding-expand-line)))
+     (define-key html-mode-map (kbd "C-c C-j") 'zencoding-expand-line)
+     ;; remove key-bindings
+     (define-key zencoding-mode-keymap (kbd "C-j") nil)
+     (define-key zencoding-mode-keymap (kbd "C-<return>") nil)
+     (define-key js2-mode-map (kbd "M-j") nil)
+     ))
 
 ;; Newline after inserting closing tag in html-mode
 (defadvice sgml-close-tag (after close-tag-then-newline activate)
