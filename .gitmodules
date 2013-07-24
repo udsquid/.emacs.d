@@ -85,3 +85,6 @@
 [submodule "site-lisp/mark-multiple"]
 	path = site-lisp/mark-multiple
 	url = https://github.com/magnars/mark-multiple.el.git
+[submodule "site-lisp/simplezen"]
+	path = site-lisp/simplezen
+	url = https://github.com/magnars/simplezen.el.git
