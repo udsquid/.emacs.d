@@ -42,9 +42,6 @@
      (define-key html-mode-map (kbd "M-r") 'tagedit-raise-tag)
      (define-key html-mode-map (kbd "s-s") 'tagedit-splice-tag)
 
-     (tagedit-disable-experimental-features)
-     (add-hook 'html-mode-hook (lambda () (tagedit-mode 1)))
-
      ;; no paredit equivalents
      (define-key html-mode-map (kbd "s-k") 'tagedit-kill-attribute)
      (define-key html-mode-map (kbd "s-<return>") 'tagedit-toggle-multiline-tag)
