@@ -24,7 +24,7 @@
 (global-set-key (kbd "C-x C-m") 'smex)
 
 ;; Expand region (increases selected region by semantic units)
-(global-set-key (kbd "C-'") 'er/expand-region)
+(global-set-key (kbd "s-h") 'er/expand-region)
 
 ;; Experimental multiple-cursors
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
@@ -32,21 +32,12 @@
 (global-set-key (kbd "C-S-c C-a") 'mc/edit-beginnings-of-lines)
 
 ;; Mark additional regions matching current region
-(global-set-key (kbd "C-s-a") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-s-\'") 'mc/mark-next-like-this)
-(global-set-key (kbd "M-s-\'") 'mc/mark-all-like-this-dwim)
+(global-set-key (kbd "C-s-w") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-s-v") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-s-l") 'mc/mark-all-like-this-dwim)
 
 (global-set-key (kbd "C-s-\"") 'mc/mark-more-like-this-extended)
 (global-set-key (kbd "M-s-a") 'mc/mark-all-in-region)
-
-;; Symbol and word specific mark-more
-(global-set-key (kbd "s-a") 'mc/mark-previous-word-like-this)
-(global-set-key (kbd "s-\'") 'mc/mark-next-word-like-this)
-(global-set-key (kbd "M-s-\'") 'mc/mark-all-words-like-this)
-
-(global-set-key (kbd "s-A") 'mc/mark-previous-symbol-like-this)
-(global-set-key (kbd "s-\"") 'mc/mark-next-symbol-like-this)
-(global-set-key (kbd "M-s-\"") 'mc/mark-all-symbols-like-this)
 
 ;; Extra multiple cursors stuff
 (global-set-key (kbd "C-~") 'mc/reverse-regions)
@@ -56,7 +47,7 @@
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
 ;; Quickly jump in document with ace-jump-mode
-(define-key global-map (kbd "C-s-o") 'ace-jump-mode)
+(define-key global-map (kbd "C-s-m") 'ace-jump-mode)
 
 ;; Perform general cleanup.
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
@@ -84,6 +75,7 @@
 ;; Use M-w for copy-line if no active region
 (global-set-key (kbd "M-w") 'save-region-or-current-line)
 (global-set-key (kbd "M-W") '(lambda () (interactive) (save-region-or-current-line 1)))
+(global-set-key (kbd "s-w") 'save-region-or-current-line)
 
 ;; Make shell more convenient, and suspend-frame less
 (global-set-key (kbd "C-z") 'shell)
@@ -123,7 +115,7 @@
 
 ;; toggle two most recent buffers
 (fset 'quick-switch-buffer [?\C-x ?b return])
-(global-set-key (kbd "s-j") 'quick-switch-buffer)
+(global-set-key (kbd "s-f") 'quick-switch-buffer)
 
 ;; Revert without any fuss
 (global-set-key (kbd "M-<escape>")
