@@ -48,6 +48,8 @@
 
 ;; Use SSH as tramp method
 (setq tramp-default-method "ssh")
+;; Allow any kind of remote prompt
+(setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*")
 ;; sudo edit remote file
 (set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
 
@@ -151,3 +153,4 @@
 (when is-linux (require 'linux))
 ;; load Windows-specific settings when on Windows system
 (when is-windows (require 'windows))
+(put 'narrow-to-region 'disabled nil)
