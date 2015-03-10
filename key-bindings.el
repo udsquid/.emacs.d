@@ -32,8 +32,8 @@
 (global-set-key (kbd "C-S-c C-a") 'mc/edit-beginnings-of-lines)
 
 ;; Mark additional regions matching current region
-(global-set-key (kbd "C-s-,") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-s-.") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-s-.") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-s-/") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-s-l") 'mc/mark-all-like-this-dwim)
 
 (global-set-key (kbd "C-s-\/") 'mc/mark-more-like-this-extended)
@@ -47,7 +47,7 @@
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
 ;; Quickly jump in document with ace-jump-mode
-(define-key global-map (kbd "C-s-m") 'ace-jump-mode)
+(define-key global-map (kbd "C-o") 'ace-jump-mode)
 
 ;; Perform general cleanup.
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
