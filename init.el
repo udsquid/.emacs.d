@@ -154,3 +154,13 @@
 ;; load Windows-specific settings when on Windows system
 (when is-windows (require 'windows))
 (put 'narrow-to-region 'disabled nil)
+
+;; disable pop-up dialogs
+(defadvice yes-or-no-p (around prevent-dialog activate)
+  "Prevent yes-or-no-p from activating a dialog"
+  (let ((use-dialog-box nil))
+    ad-do-it))
+(defadvice y-or-n-p (around prevent-dialog-yorn activate)
+  "Prevent y-or-n-p from activating a dialog"
+  (let ((use-dialog-box nil))
+    ad-do-it))
