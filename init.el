@@ -15,6 +15,8 @@
 (setq inhibit-startup-message t)
 
 ;; Set path to dependencies
+(setq lisp-dir
+      (expand-file-name "lisp/" user-emacs-directory))
 (setq site-lisp-dir
       (expand-file-name "site-lisp/" user-emacs-directory))
 (setq user-platform-dir
@@ -23,7 +25,7 @@
       (concat user-emacs-directory "setup/"))
 
 ;; Set up load path
-(add-to-list 'load-path user-emacs-directory)
+(add-to-list 'load-path lisp-dir)
 (add-to-list 'load-path site-lisp-dir)
 (add-to-list 'load-path user-platform-dir)
 (add-to-list 'load-path user-setup-dir)
@@ -35,7 +37,7 @@
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file
-      (expand-file-name "custom.el" user-emacs-directory))
+      (expand-file-name "custom.el" lisp-dir))
 (load custom-file)
 
 ;; Write backup files to own directory
