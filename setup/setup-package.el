@@ -7,6 +7,8 @@
 ;; Add marmalade to package repos
 (add-to-list 'package-archives marmalade)
 (add-to-list 'package-archives melpa t)
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
 (package-initialize)
 

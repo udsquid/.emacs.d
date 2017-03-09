@@ -16,7 +16,7 @@
 (global-set-key (kbd "s-.") 'copy-from-above-command)
 
 ;; Smart M-x
-(global-set-key (kbd "M-x") 'smex)
+;; (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
@@ -250,5 +250,10 @@
 (global-set-key (kbd "C-x C-o el") (ffip-create-pattern-file-finder "*.el"))
 (global-set-key (kbd "C-x C-o md") (ffip-create-pattern-file-finder "*.md"))
 (global-set-key (kbd "C-x C-o tx") (ffip-create-pattern-file-finder "*.txt"))
+
+;; helm
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+(global-set-key (kbd "M-x") #'helm-M-x)
 
 (provide 'key-bindings)
