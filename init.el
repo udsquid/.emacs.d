@@ -143,7 +143,6 @@
 
 ;; emacs-helm
 (require 'helm-config)
-(setq helm-ff-auto-update-initial-value 1)
 
 ;;; Misc. settings
 ;; Decide how the Emacs looks like
