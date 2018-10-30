@@ -1,5 +1,12 @@
 ;;; Basic settings
 ;; Are we on a mac?
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (setq is-mac (equal system-type 'darwin))
 ;; Are we on a linux?
 (setq is-linux (equal system-type 'gnu/linux))
@@ -108,6 +115,7 @@
 (require 'smart-forward)
 (require 'visual-regexp)
 (require 'wgrep)
+(require 'flymd)
 
 ;; Beautiful look
 (add-to-list 'custom-theme-load-path
@@ -143,6 +151,7 @@
 
 ;; emacs-helm
 (require 'helm-config)
+(helm-mode 1)
 
 ;;; Misc. settings
 ;; Decide how the Emacs looks like

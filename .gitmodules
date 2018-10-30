@@ -88,3 +88,9 @@
 [submodule "site-lisp/helm"]
 	path = site-lisp/helm
 	url = https://github.com/emacs-helm/helm.git
+[submodule "site-lisp/--force"]
+	path = site-lisp/--force
+	url = https://github.com/mola-T/flymd.git
+[submodule "site-lisp/flymd"]
+	path = site-lisp/flymd
+	url = https://github.com/mola-T/flymd.git
