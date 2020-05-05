@@ -58,3 +58,6 @@ There are two things you can do about this warning:
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+
+;; setup font
+(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-16"))
