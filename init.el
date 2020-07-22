@@ -65,3 +65,13 @@ There are two things you can do about this warning:
 ;; setup theme
 (use-package undo-tree
   :ensure t)
+
+;; --- handy custom keys ---
+;; right-hand for cursor movings
+(global-set-key (kbd "M-p") 'backward-paragraph)
+(global-set-key (kbd "M-n") 'forward-paragraph)
+
+(global-set-key (kbd "M-i") 'back-to-indentation)
+
+;; left-hand for editing
+(global-set-key (kbd "M-z") 'undo)
