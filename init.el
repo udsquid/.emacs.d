@@ -64,7 +64,10 @@ There are two things you can do about this warning:
 
 ;; setup theme
 (use-package undo-tree
-  :ensure t)
+  :ensure t
+  :config
+  (global-undo-tree-mode)
+  :bind ("M-Z" . undo-tree-redo))
 
 ;; --- handy custom keys ---
 ;; right-hand for cursor movings
