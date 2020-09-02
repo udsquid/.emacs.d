@@ -62,7 +62,7 @@ There are two things you can do about this warning:
 ;; setup font
 (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-16"))
 
-;; setup theme
+;; setup undo-tree
 (use-package undo-tree
   :ensure t
   :config
