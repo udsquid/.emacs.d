@@ -42,7 +42,7 @@ There are two things you can do about this warning:
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (undo-tree cyberpunk-theme use-package))))
+ '(package-selected-packages (quote (cyberpunk-theme use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -62,13 +62,6 @@ There are two things you can do about this warning:
 ;; setup font
 (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-16"))
 
-;; setup undo-tree
-(use-package undo-tree
-  :ensure t
-  :config
-  (global-undo-tree-mode)
-  :bind ("M-Z" . undo-tree-redo))
-
 ;; --- handy custom keys ---
 ;; right-hand for cursor movings
 (global-set-key (kbd "M-p") 'backward-paragraph)
@@ -77,4 +70,3 @@ There are two things you can do about this warning:
 (global-set-key (kbd "M-i") 'back-to-indentation)
 
 ;; left-hand for editing
-(global-set-key (kbd "M-z") 'undo)
