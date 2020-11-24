@@ -42,7 +42,9 @@ There are two things you can do about this warning:
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (undo-tree cyberpunk-theme use-package))))
+ '(package-selected-packages
+   (quote
+    (ace-jump-mode undo-tree cyberpunk-theme use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -68,6 +70,12 @@ There are two things you can do about this warning:
   :config
   (global-undo-tree-mode)
   :bind ("M-Z" . undo-tree-redo))
+
+;; setup ace-jump-mode
+(use-package ace-jump-mode
+  :ensure t
+  :config
+  :bind ("M-o" . ace-jump-mode))
 
 ;; --- handy custom keys ---
 ;; right-hand for cursor movings
