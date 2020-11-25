@@ -69,6 +69,9 @@ There are two things you can do about this warning:
   :ensure t
   :bind ("M-o" . avy-goto-char))
 
+;; highlight current line
+(global-hl-line-mode t)
+
 ;; --- handy custom keys ---
 ;; right-hand for cursor movings
 (global-set-key (kbd "M-p") 'backward-paragraph)
