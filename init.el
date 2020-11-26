@@ -42,7 +42,7 @@ There are two things you can do about this warning:
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(avy cyberpunk-theme use-package)))
+ '(package-selected-packages '(helpful avy cyberpunk-theme use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -71,6 +71,16 @@ There are two things you can do about this warning:
 
 ;; highlight current line
 (global-hl-line-mode t)
+
+;; show column number
+(setq column-number-mode t)
+
+;; better help
+(use-package helpful
+  :ensure t
+  :bind (("C-h f" . helpful-callable)
+	 ("C-h v" . helpful-variable)
+	 ("C-h k" . helpful-key)))
 
 ;; --- handy custom keys ---
 ;; right-hand for cursor movings
