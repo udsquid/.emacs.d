@@ -82,7 +82,7 @@ There are two things you can do about this warning:
 	 ("C-h v" . helpful-variable)
 	 ("C-h k" . helpful-key)))
 
-;; helm
+;; powerful search framework
 (use-package helm
   :ensure t
   :bind (("M-x" . helm-M-x)
