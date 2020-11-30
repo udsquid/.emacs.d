@@ -64,7 +64,7 @@ There are two things you can do about this warning:
 ;; setup font
 (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-16"))
 
-;; setup jumping package
+;; cursor jumping package
 (use-package avy
   :ensure t
   :bind ("M-o" . avy-goto-char))
