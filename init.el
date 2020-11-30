@@ -75,7 +75,7 @@ There are two things you can do about this warning:
 ;; show column number
 (setq column-number-mode t)
 
-;; better help
+;; better help system
 (use-package helpful
   :ensure t
   :bind (("C-h f" . helpful-callable)
