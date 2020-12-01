@@ -90,6 +90,11 @@ There are two things you can do about this warning:
   :config
   (helm-mode t))
 
+;; disable auto save buffer
+(setq auto-save-default nil)
+;; disable backup file
+(setq make-backup-files nil)
+
 ;; --- handy custom keys ---
 ;; right-hand for cursor movings
 (global-set-key (kbd "M-p") 'backward-paragraph)
