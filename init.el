@@ -86,7 +86,9 @@ There are two things you can do about this warning:
 (use-package helm
   :ensure t
   :bind (("M-x" . helm-M-x)
-	 ([remap find-file] . helm-find-files)))
+	 ([remap find-file] . helm-find-files))
+  :config
+  (helm-mode t))
 
 ;; --- handy custom keys ---
 ;; right-hand for cursor movings
