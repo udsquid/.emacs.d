@@ -95,6 +95,9 @@ There are two things you can do about this warning:
 ;; disable backup file
 (setq make-backup-files nil)
 
+;; turn off newbie protection
+(put 'narrow-to-region 'disabled nil)
+
 ;; --- handy custom keys ---
 ;; right-hand for cursor movings
 (global-set-key (kbd "M-p") 'backward-paragraph)
