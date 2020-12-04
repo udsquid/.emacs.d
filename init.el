@@ -98,6 +98,10 @@ There are two things you can do about this warning:
 ;; turn off newbie protection
 (put 'narrow-to-region 'disabled nil)
 
+;; move around between windows
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings))
+
 ;; --- handy custom keys ---
 ;; right-hand for cursor movings
 (global-set-key (kbd "M-p") 'backward-paragraph)
