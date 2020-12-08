@@ -130,3 +130,6 @@ There are two things you can do about this warning:
 (global-set-key (kbd "M-i") 'back-to-indentation)
 
 ;; left-hand for editing
+
+;; ### buffer & window ###
+(global-set-key (kbd "s-w") 'other-window)
