@@ -43,7 +43,7 @@ There are two things you can do about this warning:
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(expand-region helm helpful avy cyberpunk-theme use-package)))
+   '(which-key expand-region helm helpful avy cyberpunk-theme use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -107,6 +107,12 @@ There are two things you can do about this warning:
 (use-package expand-region
   :ensure t
   :bind ("s-h" . er/expand-region))
+
+;; show hint for key bindings
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-mode))
 
 ;; --- handy custom keys ---
 ;; right-hand for cursor movings
