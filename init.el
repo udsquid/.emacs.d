@@ -42,8 +42,10 @@ There are two things you can do about this warning:
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(highlight-indent-guides-auto-character-face-perc 20)
+ '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
-   '(which-key expand-region helm helpful avy cyberpunk-theme use-package)))
+   '(highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -113,6 +115,12 @@ There are two things you can do about this warning:
   :ensure t
   :config
   (which-key-mode))
+
+;; highlight indentation levels
+(use-package highlight-indent-guides
+  :ensure t
+  :init
+  (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
 
 ;; --- handy custom keys ---
 ;; right-hand for cursor movings
