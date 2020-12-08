@@ -45,7 +45,7 @@ There are two things you can do about this warning:
  '(highlight-indent-guides-auto-character-face-perc 20)
  '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
-   '(highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package)))
+   '(dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -121,6 +121,12 @@ There are two things you can do about this warning:
   :ensure t
   :init
   (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
+
+;; show recent files and projects
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
 
 ;; --- handy custom keys ---
 ;; right-hand for cursor movings
