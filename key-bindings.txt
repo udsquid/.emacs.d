@@ -1,0 +1,77 @@
+# original keys
+
+M-c: capitalize-word
+M-u: upcase-word
+M-l: downcase-word
+
+# candidate keys
+
+C-f: forward-char
+C-b: backward-char
+C-n: next-line
+C-p: previous-line
+
+C-a: move-beginning-of-line
+C-e: move-end-of-line
+M-f: forward-word
+M-b: backward-word
+M-a: backward-sentence
+M-e: forward-sentence
+M-v: scroll-down-command
+C-v: scroll-up-command
+M-<: beginning-of-buffer
+M->: end-of-buffer
+
+M-g g (or M-g M-g): goto-line
+
+C-s: isearch-forward
+C-r: isearch-backward
+
+C-SPC: set-mark-command
+C-x C-x: exchange-point-and-mark
+
+C-u C-SPC: (cycle through mark ring)
+
+C-x h: mark-whole-buffer
+M-h: mark-paragraph
+
+--- right-hand (moving cursor) ---
+
+# M-n: forward-paragraph
+M-e
+M-o
+# M-i: back-to-indentation
+
+M-f
+M-u: upcase-word
+# M-p: backward-paragraph
+M-;
+
+M-l: downcase-word
+M-.
+M-/
+
+M-j
+M-y
+M-k
+
+--- left-hand (editing) ---
+
+M-t
+M-h
+M-s
+M-a
+
+M-w
+M-r
+M-d
+M-q
+
+M-c: capitalize-word
+M-m
+M-x
+# M-z: undo
+
+M-b
+M-g
+M-v
