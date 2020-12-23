@@ -38,11 +38,11 @@ M-h: mark-paragraph
 --- right-hand (moving cursor) ---
 
 # M-n: forward-paragraph
-M-e
-M-o
+# M-e: forward-sentence
+# M-o: avy-goto-char
 # M-i: back-to-indentation
 
-M-f
+M-f: forward-word
 M-u: upcase-word
 # M-p: backward-paragraph
 M-;
