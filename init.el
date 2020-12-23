@@ -132,6 +132,8 @@ There are two things you can do about this warning:
 ;; right-hand for cursor movings
 (global-set-key (kbd "M-p") 'backward-paragraph)
 (global-set-key (kbd "M-n") 'forward-paragraph)
+(global-set-key (kbd "M-P") 'scroll-down-command)
+(global-set-key (kbd "M-N") 'scroll-up-command)
 
 (global-set-key (kbd "M-i") 'back-to-indentation)
 
