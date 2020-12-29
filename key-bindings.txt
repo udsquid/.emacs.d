@@ -38,7 +38,7 @@ M-h: mark-paragraph
 --- right-hand (moving cursor) ---
 
 M-n: forward-paragraph
-M-e: forward-sentence
+M-e: backward-paragraph
 M-o: avy-goto-char
 M-i: back-to-indentation
 
