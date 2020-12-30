@@ -37,22 +37,22 @@ M-h: mark-paragraph
 
 --- right-hand (moving cursor) ---
 
-M-n: forward-paragraph
-M-e: backward-paragraph
-M-o: avy-goto-char
-M-i: back-to-indentation
+# M-n: forward-paragraph
+# M-e: move-end-of-line
+# M-o: avy-goto-char
+# M-i: back-to-indentation
 
 M-f: forward-word
 M-u: upcase-word
-M-p: backward-paragraph
-M-;: comment-dwim
+# M-p: backward-paragraph
+# M-;: comment-dwim
 
 M-l: downcase-word
 M-.: xref-find-definitions
 M-/: dabbrev-expand
 
 M-j: default-indent-new-line
-M-y: yank-pop
+# M-y: yank-pop
 M-k: kill-sentence
 
 --- left-hand (editing) ---
@@ -60,18 +60,18 @@ M-k: kill-sentence
 M-t: transpose-words
 M-h: mark-paragraph
 M-s: (serial key prefix)
-M-a: backward-sentence
+# M-a: move-beginning-of-line
 
-M-w: kill-ring-save
+# M-w: other-window
 M-r: move-to-window-line-top-bottom
 M-d: kill-word
 M-q: fill-paragraph
 
 M-c: capitalize-word
-M-m: back-to-indentation
+M-m: 
 M-x: helm-M-x
 M-z: zap-to-char
 
 M-b: backward-word
 M-g: (serial key prefix)
-M-v: scroll-down-command
+# M-v: yank
