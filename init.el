@@ -6,10 +6,6 @@
 (keyboard-translate ?\C-x ?\C-t)
 (keyboard-translate ?\C-t ?\C-x)
 
-;; quick switch between two recent buffers
-(fset 'quick-switch-buffer [?\C-x ?b return])
-(global-set-key (kbd "s-f") 'quick-switch-buffer)
-
 ;; setup package repository
 ;; copy from: https://melpa.org/#/getting-started
 (require 'package)
@@ -129,15 +125,28 @@ There are two things you can do about this warning:
   (dashboard-setup-startup-hook))
 
 ;; --- handy custom keys ---
-;; right-hand for cursor movings
-(global-set-key (kbd "M-e") 'backward-paragraph)
-(global-set-key (kbd "M-n") 'forward-paragraph)
-(global-set-key (kbd "M-E") 'scroll-down-command)
-(global-set-key (kbd "M-N") 'scroll-up-command)
 
+;; ### cursor moving ###
+(global-set-key (kbd "M-a") 'move-beginning-of-line)
+(global-set-key (kbd "M-e") 'move-end-of-line)
 (global-set-key (kbd "M-i") 'back-to-indentation)
 
-;; left-hand for editing
+(global-set-key (kbd "M-n") 'forward-paragraph)
+(global-set-key (kbd "M-p") 'backward-paragraph)
+(global-set-key (kbd "M-N") 'scroll-up-command)
+(global-set-key (kbd "M-P") 'scroll-down-command)
 
 ;; ### buffer & window ###
+(global-set-key (kbd "M-w") 'other-window)
 (global-set-key (kbd "s-w") 'other-window)
+
+;; quick switch between two recent buffers
+(fset 'quick-switch-buffer [?\C-x ?b return])
+(global-set-key (kbd "s-f") 'quick-switch-buffer)
+
+;; ### copy & paste ###
+(global-set-key (kbd "M-c") 'kill-ring-save)
+(global-set-key (kbd "M-v") 'yank)
+(global-set-key (kbd "s-c") 'kill-ring-save)
+(global-set-key (kbd "s-v") 'yank)
+(global-set-key (kbd "M-y") 'yank-pop)
