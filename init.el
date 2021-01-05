@@ -134,7 +134,8 @@ There are two things you can do about this warning:
 	 ("s-m e" . mc/mark-more-like-this-extended)
 	 ("s-m l" . mc/edit-lines)
 	 ("s-m a" . mc/mark-all-like-this)
-	 ("s-m r" . mc/mark-all-in-region)))
+	 ("s-m r" . mc/mark-all-in-region)
+	 ("s-m y" . yank-rectangle)))
 
 ;; --- handy custom keys ---
 
