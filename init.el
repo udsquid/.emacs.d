@@ -41,7 +41,7 @@ There are two things you can do about this warning:
  '(highlight-indent-guides-auto-character-face-perc 20)
  '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
-   '(dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package)))
+   '(multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -124,6 +124,18 @@ There are two things you can do about this warning:
   :config
   (dashboard-setup-startup-hook))
 
+;; edit multiple lines at once
+(define-prefix-command 'mc-map)
+(global-set-key (kbd "s-m") 'mc-map)
+(use-package multiple-cursors
+  :ensure t
+  :bind (("s-t" . mc/mark-next-like-this)
+	 ("s-w" . mc/mark-next-like-this-word)
+	 ("s-m e" . mc/mark-more-like-this-extended)
+	 ("s-m l" . mc/edit-lines)
+	 ("s-m a" . mc/mark-all-like-this)
+	 ("s-m r" . mc/mark-all-in-region)))
+
 ;; --- handy custom keys ---
 
 ;; ### cursor moving ###
@@ -138,7 +150,6 @@ There are two things you can do about this warning:
 
 ;; ### buffer & window ###
 (global-set-key (kbd "M-w") 'other-window)
-(global-set-key (kbd "s-w") 'other-window)
 
 ;; quick switch between two recent buffers
 (fset 'quick-switch-buffer [?\C-x ?b return])
