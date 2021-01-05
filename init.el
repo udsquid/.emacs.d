@@ -104,7 +104,9 @@ There are two things you can do about this warning:
 ;; smart select region
 (use-package expand-region
   :ensure t
-  :bind ("s-h" . er/expand-region))
+  :bind (("s-h" . er/expand-region)
+	 ("s-i" . er/mark-inside-quotes)
+	 ("s-o" . er/mark-outside-quotes)))
 
 ;; show hint for key bindings
 (use-package which-key
