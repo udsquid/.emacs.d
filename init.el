@@ -41,7 +41,7 @@ There are two things you can do about this warning:
  '(highlight-indent-guides-auto-character-face-perc 20)
  '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
-   '(multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package)))
+   '(diminish multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -138,6 +138,14 @@ There are two things you can do about this warning:
 	 ("s-m a" . mc/mark-all-like-this)
 	 ("s-m r" . mc/mark-all-in-region)
 	 ("s-m y" . yank-rectangle)))
+
+(use-package diminish
+  :ensure t
+  :config
+  (diminish 'helm-mode)
+  (diminish 'highlight-indent-guides-mode)
+  (diminish 'which-key-mode)
+  (diminish 'eldoc-mode))
 
 ;; --- handy custom keys ---
 
