@@ -41,7 +41,7 @@ There are two things you can do about this warning:
  '(highlight-indent-guides-auto-character-face-perc 20)
  '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
-   '(diminish multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package)))
+   '(all-the-icons doom-modeline multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -139,13 +139,19 @@ There are two things you can do about this warning:
 	 ("s-m r" . mc/mark-all-in-region)
 	 ("s-m y" . yank-rectangle)))
 
-(use-package diminish
+;; pretty icons
+;; remember to run command: all-the-icons-install-fonts
+(use-package all-the-icons
+  :ensure t)
+
+;; fancy but minimal mode-line
+(use-package doom-modeline
   :ensure t
+  :init (doom-modeline-mode 1)
   :config
-  (diminish 'helm-mode)
-  (diminish 'highlight-indent-guides-mode)
-  (diminish 'which-key-mode)
-  (diminish 'eldoc-mode))
+  (setq doom-modeline-enable-word-count t)
+  (setq doom-modeline-buffer-encoding nil)
+  (setq doom-modeline-env-version nil))
 
 ;; --- handy custom keys ---
 
