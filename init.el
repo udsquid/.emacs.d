@@ -151,7 +151,9 @@ There are two things you can do about this warning:
   :config
   (setq doom-modeline-enable-word-count t)
   (setq doom-modeline-buffer-encoding nil)
-  (setq doom-modeline-env-version nil))
+  (setq doom-modeline-env-version nil)
+  (setq vc-display-status nil)
+  (advice-add #'doom-modeline-update-vcs-text :override #'ignore))
 
 ;; --- handy custom keys ---
 
