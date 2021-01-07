@@ -41,7 +41,8 @@ There are two things you can do about this warning:
  '(highlight-indent-guides-auto-character-face-perc 20)
  '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
-   '(all-the-icons doom-modeline multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package)))
+   '(all-the-icons doom-modeline multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
+ '(persp-mode-prefix-key [8388720]))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -154,6 +155,11 @@ There are two things you can do about this warning:
   (setq doom-modeline-env-version nil)
   (setq vc-display-status nil)
   (advice-add #'doom-modeline-update-vcs-text :override #'ignore))
+
+(use-package perspective
+  :ensure t
+  :config
+  (persp-mode))
 
 ;; --- handy custom keys ---
 
