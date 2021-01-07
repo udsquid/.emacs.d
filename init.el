@@ -86,7 +86,7 @@ There are two things you can do about this warning:
   :ensure t
   :bind (("M-x" . helm-M-x)
 	 ([remap find-file] . helm-find-files))
-  :config
+  :init
   (helm-mode t))
 
 ;; disable auto save buffer
