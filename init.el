@@ -42,7 +42,8 @@ There are two things you can do about this warning:
  '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
    '(perspective all-the-icons doom-modeline multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
- '(persp-mode-prefix-key [8388720]))
+ '(persp-mode-prefix-key [8388720])
+ '(persp-state-default-file "./.persp"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -159,7 +160,8 @@ There are two things you can do about this warning:
 (use-package perspective
   :ensure t
   :config
-  (persp-mode))
+  (persp-mode)
+  (add-hook 'kill-emacs-hook #'persp-state-save))
 
 ;; --- handy custom keys ---
 
