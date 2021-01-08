@@ -43,7 +43,7 @@ There are two things you can do about this warning:
  '(package-selected-packages
    '(perspective all-the-icons doom-modeline multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
  '(persp-mode-prefix-key [8388720])
- '(persp-state-default-file "./.persp"))
+ '(persp-state-default-file (concat user-emacs-directory ".persp")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
