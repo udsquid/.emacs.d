@@ -159,8 +159,11 @@ There are two things you can do about this warning:
 
 (use-package perspective
   :ensure t
-  :config
+  :init
   (persp-mode)
+  :bind (("C-x b" . persp-switch-to-buffer*)
+	 ("C-x k" . persp-kill-buffer*))
+  :config
   (add-hook 'kill-emacs-hook #'persp-state-save))
 
 ;; --- handy custom keys ---
