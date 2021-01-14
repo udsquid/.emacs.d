@@ -157,6 +157,7 @@ There are two things you can do about this warning:
   (setq vc-display-status nil)
   (advice-add #'doom-modeline-update-vcs-text :override #'ignore))
 
+;; manage buffers in project perspective
 (use-package perspective
   :ensure t
   :init
