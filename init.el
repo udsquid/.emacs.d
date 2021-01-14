@@ -41,7 +41,7 @@ There are two things you can do about this warning:
  '(highlight-indent-guides-auto-character-face-perc 20)
  '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
-   '(perspective all-the-icons doom-modeline multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
+   '(anzu perspective all-the-icons doom-modeline multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
  '(persp-mode-prefix-key [8388720])
  '(persp-state-default-file (concat user-emacs-directory ".persp")))
 (custom-set-faces
@@ -166,6 +166,14 @@ There are two things you can do about this warning:
 	 ("C-x k" . persp-kill-buffer*))
   :config
   (add-hook 'kill-emacs-hook #'persp-state-save))
+
+;; show the matches while in search/replace
+(use-package anzu
+  :ensure t
+  :init
+  (global-anzu-mode)
+  :bind (([remap query-replace] . 'anzu-query-replace)
+	 ([remap query-replace-regexp] . 'anzu-query-replace-regexp)))
 
 ;; --- handy custom keys ---
 
