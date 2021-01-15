@@ -197,9 +197,15 @@ There are two things you can do about this warning:
 (fset 'quick-switch-buffer [?\C-x ?b return])
 (global-set-key (kbd "s-f") 'quick-switch-buffer)
 
-;; ### copy & paste ###
+;; ### editing ###
 (global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "M-v") 'yank)
 (global-set-key (kbd "s-c") 'kill-ring-save)
 (global-set-key (kbd "s-v") 'yank)
 (global-set-key (kbd "M-y") 'yank-pop)
+
+(global-set-key (kbd "M-k") 'kill-line)
+(global-set-key (kbd "M-j") (lambda () (interactive) (join-line -1)))
+(global-set-key (kbd "M-t") 'capitalize-word)
+
+(global-set-key (kbd "M-z") 'undo)
