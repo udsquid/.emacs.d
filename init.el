@@ -186,8 +186,8 @@ There are two things you can do about this warning:
   :ensure t
   :bind (("M-[" . sp-backward-sexp)
 	 ("M-]" . sp-forward-sexp))
-  :config
-  (progn (show-smartparens-global-mode t))
+  :init
+  (show-smartparens-global-mode t)
   (add-hook 'prog-mode-hook 'turn-on-smartparens-mode))
 
 ;; --- handy custom keys ---
