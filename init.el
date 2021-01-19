@@ -41,7 +41,7 @@ There are two things you can do about this warning:
  '(highlight-indent-guides-auto-character-face-perc 20)
  '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
-   '(ws-butler anzu perspective all-the-icons doom-modeline multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
+   '(smartparens ws-butler anzu perspective all-the-icons doom-modeline multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
  '(persp-mode-prefix-key [8388720])
  '(persp-state-default-file (concat user-emacs-directory ".persp")))
 (custom-set-faces
@@ -180,6 +180,15 @@ There are two things you can do about this warning:
   :ensure t
   :init
   (ws-butler-global-mode))
+
+;; smart way to manipulate parenthesis
+(use-package smartparens
+  :ensure t
+  :bind (("M-[" . sp-backward-sexp)
+	 ("M-]" . sp-forward-sexp))
+  :config
+  (progn (show-smartparens-global-mode t))
+  (add-hook 'prog-mode-hook 'turn-on-smartparens-mode))
 
 ;; --- handy custom keys ---
 
