@@ -63,7 +63,7 @@ There are two things you can do about this warning:
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 ;; setup font
-(add-to-list 'default-frame-alist '(font . "Hack-18"))
+(add-to-list 'default-frame-alist '(font . "Hack-16"))
 
 ;; cursor jumping package
 (use-package avy
