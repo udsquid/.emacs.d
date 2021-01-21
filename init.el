@@ -165,7 +165,9 @@ There are two things you can do about this warning:
   :bind (("C-x b" . persp-switch-to-buffer*)
 	 ("C-x k" . persp-kill-buffer*))
   :config
-  (add-hook 'kill-emacs-hook #'persp-state-save))
+  (add-hook 'kill-emacs-hook #'persp-state-save)
+  :custom
+  (persp-sort 'access))
 
 ;; show the matches while in search/replace
 (use-package anzu
