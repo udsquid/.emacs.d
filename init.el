@@ -190,6 +190,12 @@ There are two things you can do about this warning:
   (show-smartparens-global-mode t)
   (add-hook 'prog-mode-hook 'turn-on-smartparens-mode))
 
+;; make Emacs as a programming IDE
+(use-package python-mode
+  :ensure t
+  :custom
+  (python-shell-interpreter "/usr/local/bin/python"))
+
 ;; --- handy custom keys ---
 
 ;; ### cursor moving ###
