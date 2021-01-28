@@ -6,32 +6,19 @@
 (keyboard-translate ?\C-x ?\C-t)
 (keyboard-translate ?\C-t ?\C-x)
 
-;; setup package repository
-;; copy from: https://melpa.org/#/getting-started
+;; setup package system
 (require 'package)
-(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-                    (not (gnutls-available-p))))
-       (proto (if no-ssl "http" "https")))
-  (when no-ssl (warn "\
-Your version of Emacs does not support SSL connections,
-which is unsafe because it allows man-in-the-middle attacks.
-There are two things you can do about this warning:
-1. Install an Emacs version that does support SSL and be safe.
-2. Remove this warning from your init file so you won't see it again."))
-  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
-  ;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
-  ;; and `package-pinned-packages`. Most users will not need or want to do this.
-  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
-  )
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
 
-;; install 'use-package', a package to tidy up your package configurations
-(if (not (package-installed-p 'use-package))
-    (progn
-      (package-refresh-contents)
-      (package-install 'use-package)))
+;; install use-package
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
 
 (require 'use-package)
+(setq use-package-always-ensure t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -41,7 +28,7 @@ There are two things you can do about this warning:
  '(highlight-indent-guides-auto-character-face-perc 20)
  '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
-   '(restclient python-mode smartparens ws-butler anzu perspective all-the-icons doom-modeline multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
+   '(restclient python-mode smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
  '(persp-mode-prefix-key [8388720])
  '(persp-state-default-file (concat user-emacs-directory ".persp")))
 (custom-set-faces
@@ -53,7 +40,6 @@ There are two things you can do about this warning:
 
 ;; setup theme
 (use-package cyberpunk-theme
-  :ensure t
   :init
   (load-theme 'cyberpunk t))
 
@@ -69,7 +55,6 @@ There are two things you can do about this warning:
 
 ;; cursor jumping package
 (use-package avy
-  :ensure t
   :bind ("M-o" . avy-goto-char))
 
 ;; highlight current line
@@ -80,14 +65,12 @@ There are two things you can do about this warning:
 
 ;; better help system
 (use-package helpful
-  :ensure t
   :bind (("C-h f" . helpful-callable)
 	 ("C-h v" . helpful-variable)
 	 ("C-h k" . helpful-key)))
 
 ;; powerful search framework
 (use-package helm
-  :ensure t
   :bind (("M-x" . helm-M-x)
 	 ([remap find-file] . helm-find-files)
 	 ([remap occur] . helm-occur))
@@ -108,26 +91,22 @@ There are two things you can do about this warning:
 
 ;; smart select region
 (use-package expand-region
-  :ensure t
   :bind (("s-h" . er/expand-region)
 	 ("s-i" . er/mark-inside-quotes)
 	 ("s-o" . er/mark-outside-quotes)))
 
 ;; show hint for key bindings
 (use-package which-key
-  :ensure t
   :config
   (which-key-mode))
 
 ;; highlight indentation levels
 (use-package highlight-indent-guides
-  :ensure t
   :init
   (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
 
 ;; show recent files and projects
 (use-package dashboard
-  :ensure t
   :config
   (dashboard-setup-startup-hook))
 
@@ -135,7 +114,6 @@ There are two things you can do about this warning:
 (define-prefix-command 'mc-map)
 (global-set-key (kbd "s-m") 'mc-map)
 (use-package multiple-cursors
-  :ensure t
   :bind (("s-t" . mc/mark-next-like-this)
 	 ("s-w" . mc/mark-next-like-this-word)
 	 ("s-m e" . mc/mark-more-like-this-extended)
@@ -146,12 +124,10 @@ There are two things you can do about this warning:
 
 ;; pretty icons
 ;; remember to run command: all-the-icons-install-fonts
-(use-package all-the-icons
-  :ensure t)
+(use-package all-the-icons)
 
 ;; fancy but minimal mode-line
 (use-package doom-modeline
-  :ensure t
   :init (doom-modeline-mode 1)
   :config
   (setq doom-modeline-enable-word-count t)
@@ -162,7 +138,6 @@ There are two things you can do about this warning:
 
 ;; manage buffers in project perspective
 (use-package perspective
-  :ensure t
   :init
   (persp-mode)
   :bind (("C-x b" . persp-switch-to-buffer*)
@@ -174,7 +149,6 @@ There are two things you can do about this warning:
 
 ;; show the matches while in search/replace
 (use-package anzu
-  :ensure t
   :init
   (global-anzu-mode)
   :bind (([remap query-replace] . 'anzu-query-replace)
@@ -182,13 +156,11 @@ There are two things you can do about this warning:
 
 ;; smart delete whitespaces & blank lines
 (use-package ws-butler
-  :ensure t
   :init
   (ws-butler-global-mode))
 
 ;; smart way to manipulate parenthesis
 (use-package smartparens
-  :ensure t
   :bind (("M-[" . sp-backward-sexp)
 	 ("M-]" . sp-forward-sexp))
   :init
@@ -197,13 +169,11 @@ There are two things you can do about this warning:
 
 ;; make Emacs as a programming IDE
 (use-package python-mode
-  :ensure t
   :custom
   (python-shell-interpreter "/usr/local/bin/python"))
 
 ;; HTTP REST tool
-(use-package restclient
-  :ensure t)
+(use-package restclient)
 
 ;; --- handy custom keys ---
 
