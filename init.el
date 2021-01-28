@@ -87,7 +87,8 @@ There are two things you can do about this warning:
 (use-package helm
   :ensure t
   :bind (("M-x" . helm-M-x)
-	 ([remap find-file] . helm-find-files))
+	 ([remap find-file] . helm-find-files)
+	 ([remap occur] . helm-occur))
   :init
   (helm-mode t))
 
