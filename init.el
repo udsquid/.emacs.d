@@ -51,7 +51,7 @@
 ;; setup font
 (set-face-attribute 'default nil
 		    :font "DejaVu Sans Mono"
-		    :height 160)
+		    :height 180)
 
 ;; cursor jumping package
 (use-package avy
