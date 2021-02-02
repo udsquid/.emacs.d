@@ -167,11 +167,6 @@
   (show-smartparens-global-mode t)
   (add-hook 'prog-mode-hook 'turn-on-smartparens-mode))
 
-;; make Emacs as a programming IDE
-(use-package python-mode
-  :custom
-  (python-shell-interpreter "/usr/local/bin/python"))
-
 ;; HTTP REST tool
 (use-package restclient)
 
