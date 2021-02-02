@@ -134,7 +134,8 @@
   (setq doom-modeline-buffer-encoding nil)
   (setq doom-modeline-env-version nil)
   (setq vc-display-status nil)
-  (advice-add #'doom-modeline-update-vcs-text :override #'ignore))
+  (advice-add #'doom-modeline-update-vcs-text :override #'ignore)
+  (setq doom-modeline-buffer-file-name-style 'truncate-with-project))
 
 ;; manage buffers in project perspective
 (use-package perspective
