@@ -142,8 +142,6 @@
   (persp-mode)
   :bind (("C-x b" . persp-switch-to-buffer*)
 	 ("C-x k" . persp-kill-buffer*))
-  :config
-  (add-hook 'kill-emacs-hook #'persp-state-save)
   :custom
   (persp-sort 'access))
 
