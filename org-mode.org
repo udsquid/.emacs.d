@@ -1,0 +1,19 @@
+* Fold header
+TAB
+
+* Cycle through foldings
+Shift-TAB
+
+* Insert new header
+Ctrl-Enter
+Alt-Enter
+
+* Link
+org-insert-link   (C-c C-l)
+org-open-at-point (C-c C-o)
+
+* Check box
+org-toggle-checkbox (C-c C-x C-b)
+
+* TODO
+org-shiftright (S-->)
