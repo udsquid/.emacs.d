@@ -9,6 +9,7 @@
 ;; setup package system
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
 (package-initialize)
 (unless package-archive-contents
   (package-refresh-contents))
@@ -28,7 +29,7 @@
  '(highlight-indent-guides-auto-character-face-perc 20)
  '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
-   '(org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
+   '(org org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
  '(persp-mode-prefix-key [8388720])
  '(persp-state-default-file (concat user-emacs-directory ".persp")))
 (custom-set-faces
@@ -178,11 +179,10 @@
   (setq org-confirm-babel-evaluate nil)
 
   ;; enable language execution
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((emacs-lisp . t)
-     (python .t )
-     (shell . t)))
+  (org-babel-do-load-languages 'org-babel-load-languages
+			       '((emacs-lisp . t)
+				 (python .t )
+				 (shell . t)))
 
   ;; code block generator
   (require 'org-tempo)
