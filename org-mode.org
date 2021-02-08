@@ -1,3 +1,7 @@
+* Cheat-sheet
+
+[[https://orgmode.org/orgcard.pdf][Org Mode cheat-sheet]]
+
 * Fold header
 TAB
 
