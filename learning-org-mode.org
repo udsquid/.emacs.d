@@ -63,6 +63,23 @@
 
 * Properties
 
+** What is a Property in Org-Mode?
+
+   A Property is used as a configuration appling to whole buffer.
+
+*** Property Types
+
+    1. Buffer-wide (need to be placed at the top of buffer)
+       #+PROPERTY: title Org Learning Path
+       #+PROPERTY: name  Neil
+       #+PROPERTY: name+ Lin  <-- append to previous /name/
+
+    2. Property Drawer (placed below headlines)
+       * A Header
+         :PROPERTIES:
+	 :name:  Neil Lin
+         :END:
+
 ** Session Shared by Multiple Source Code Blocks
 
    It seems that system-wide header arguments don't work on *session*
