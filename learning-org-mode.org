@@ -55,6 +55,10 @@
 
    [[https://orgmode.org/manual/Results-of-Evaluation.html][Results of Evaluation]]
 
+** Babel Library
+
+   [[https://orgmode.org/worg/library-of-babel.html][The Library of Babel]]
+
 * Links
 
 ** Internal Links
@@ -109,3 +113,8 @@
      #+begin_src shell
      hostname -I
      #+end_src
+* Misc
+
+** Sending Emails
+
+   [[https://github.com/howardabrams/dot-files/blob/master/emacs-mail.org#sending-email][Sending Email]]
