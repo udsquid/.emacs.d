@@ -2,12 +2,12 @@
 
 ** Basic
 
-  * for *bold*
-  = for =verbatim=
-  / for /italic/
-  + for +strikethrough+
-  _ for _underline_
-  ~ for ~code~
+   * for *bold*
+   = for =verbatim=
+   / for /italic/
+   + for +strikethrough+
+   _ for _underline_
+   ~ for ~code~
 
 ** Syntax
 
@@ -60,3 +60,35 @@
 ** Internal Links
 
    [[https://orgmode.org/manual/Internal-Links.html][Internal Links]]
+
+* Properties
+
+** Session Shared by Multiple Source Code Blocks
+
+   It seems that system-wide header arguments don't work on *session*
+   arguments:
+
+   * A Header
+     :PROPERTIES:
+     :header-args:shell: :session *u14*
+     :END:
+
+   Maybe the only way to set system-wide ones is by customizing the
+   =org-babel-default-header-args= variable.
+
+   The [[https://orgmode.org/manual/Using-Header-Arguments.html][official manual]] says we can set =header-args= with specified
+   language, so that given session can be shared between different
+   code blocks. Like this:
+
+   * A Header
+     :PROPERTIES:
+     :header-args:shell: :session *session-name*
+     :END:
+
+     #+begin_src shell
+     ssh ubuntu-14
+     #+end_src
+
+     #+begin_src shell
+     hostname -I
+     #+end_src
