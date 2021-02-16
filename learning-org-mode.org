@@ -1,0 +1,62 @@
+* Markups
+
+** Basic
+
+  * for *bold*
+  = for =verbatim=
+  / for /italic/
+  + for +strikethrough+
+  _ for _underline_
+  ~ for ~code~
+
+** Syntax
+
+   =PRE MARKER CONTENTS MARKER POST=
+
+   PRE: whitespace, -, (, {, ', ", or beginning of line
+
+   MARKER: those special characters in [[Basic]] section
+
+   CONTENTS: goes with this format =BORDER BODY BORDER=
+       BORDER: non-whitespace character
+       BODY: any character,
+             but not more than 3 lines <-- cannot figure out,
+	                                   maybe a very long line?
+       BORDER and BODY are separated by whitespaces
+           (also cannot figure this out,
+	    maybe cannot have whitespace at the beginning of first BORDER?
+	    at the end of last BORDER?)
+
+   So the following snippets are valid:
+/line 1/ <-- at the beginning of the line
+       /line  2/
+       (/line 3/)
+       -/line 4/
+       -/---line 5---/-
+       -*first*-/second/-+third+
+
+   Therefore, you *CANNOT* mark like these:
+       cannot-markup/word/in-line
+       / some whitespace between /
+       / -text-/
+       /-text- /
+
+   Other details can be found at [[https://orgmode.org/worg/dev/org-syntax.html#Emphasis_Markers][here]].
+
+** Combine
+
+   Sometimes you can combine _/any number/_ of markups, but it seems that the
+   results really depend on the ability of display target. And it seems that
+   /_order_/ also matters (note underline doesn't work here).
+
+* Code Blockes
+
+** How to Specify Execution Results Format
+
+   [[https://orgmode.org/manual/Results-of-Evaluation.html][Results of Evaluation]]
+
+* Links
+
+** Internal Links
+
+   [[https://orgmode.org/manual/Internal-Links.html][Internal Links]]
