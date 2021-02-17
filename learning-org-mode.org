@@ -114,6 +114,32 @@
      hostname -I
      #+end_src
 
+* Todos
+
+** Track Progress
+
+   Adding =[/]= or =[%]= anywhere in the headline to track its progress.
+   See: [[https://orgmode.org/manual/Breaking-Down-Tasks.html#Breaking-Down-Tasks][Breaking Down Tasks into Subtasks]]
+
+   Example:
+
+   * A Header [1/4]
+     - [ ] Milk
+     - [X] Ham
+     - [ ] Butter
+     - [-] Veges [33%]
+       - [ ] Lettuce
+       - [X] Mushroom
+       - [ ] Cucumber
+
+   Tip: use ~C-c C-c~ to update TODO status
+
+** Checkboxes
+
+   A lightweight version of TODO, often used to split simple tasks.
+
+   Tip: use ~S-M-RET~ to insert a new checkbox (org-insert-todo-heading)
+
 * Misc
 
 ** Sending Emails
