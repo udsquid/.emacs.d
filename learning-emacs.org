@@ -37,10 +37,13 @@
    #+begin_src shell
    brew install cmake
    brew install libvterm
-   brew install --build-from-source perl
    #+end_src
 
-   Note: I'm not sure whether the =perl= is mandatory.
+   I'm not sure whether the =perl= is mandatory:
+
+   #+begin_src shell
+   brew install --build-from-source perl
+   #+end_src
 
    But I still got the same message complaining about no =CMake= at all.
 
