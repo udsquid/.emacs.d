@@ -29,7 +29,7 @@
  '(highlight-indent-guides-auto-character-face-perc 20)
  '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
-   '(org org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
+   '(vterm org org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
  '(persp-mode-prefix-key [8388720])
  '(persp-state-default-file (concat user-emacs-directory ".persp")))
 (custom-set-faces
@@ -189,6 +189,17 @@
   (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
   (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
   (add-to-list 'org-structure-template-alist '("py" . "src python")))
+
+;; better terminal
+(use-package vterm
+  :commands vterm
+  :bind (("C-c C-x"  . vterm-copy-mode)
+	 ("S-<up>"   . vterm-previous-prompt)
+	 ("S-<down>" . vterm-next-prompt))
+  :config
+  (setq vterm-shell "/usr/local/bin/bash")
+  (setq vterm-max-scrollback 10000)
+  (unbind-key "M-w" vterm-mode-map))
 
 ;; --- handy custom keys ---
 
