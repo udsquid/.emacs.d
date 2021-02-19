@@ -19,43 +19,45 @@
 
 ** vterm
 
-   The following commands are what I was trying to have a good
-   =vterm-module= to make =vterm= working.
+*** Install
 
-   First, when I was typing the command =M-x vterm=, the Emacs showed
-   me this message:
+    The following commands are what I was trying to have a good
+    =vterm-module= to make =vterm= working.
 
-   =Vterm needs `vterm-module' to work.  Compile it now? (y or n)=
+    First, when I was typing the command =M-x vterm=, the Emacs showed
+    me this message:
 
-   I click 'y' to proceed, then message showed again for another error:
+    =Vterm needs `vterm-module' to work.  Compile it now? (y or n)=
 
-   =Vterm needs CMake to be compiled. Please, install CMake=
+    I click 'y' to proceed, then message showed again for another error:
 
-   So I jumped into the terminal and type these command to install
-   dependent tools (see [[https://github.com/akermu/emacs-libvterm#requirements][akermu/emacs-libvterm]]):
+    =Vterm needs CMake to be compiled. Please, install CMake=
 
-   #+begin_src shell
-   brew install cmake
-   brew install libvterm
-   #+end_src
+    So I jumped into the terminal and type these command to install
+    dependent tools (see [[https://github.com/akermu/emacs-libvterm#requirements][akermu/emacs-libvterm]]):
 
-   I'm not sure whether the =perl= is mandatory:
+    #+begin_src shell
+    brew install cmake
+    brew install libvterm
+    #+end_src
 
-   #+begin_src shell
-   brew install --build-from-source perl
-   #+end_src
+    I'm not sure whether the =perl= is mandatory:
 
-   But I still got the same message complaining about no =CMake= at all.
+    #+begin_src shell
+    brew install --build-from-source perl
+    #+end_src
 
-   Finally I stumbled onto this [[https://github.com/akermu/emacs-libvterm/issues/169][thread]] and found that I have to build
-   =vterm-module= by myself on terminal:
+    But I still got the same message complaining about no =CMake= at all.
 
-   #+begin_src shell
-   cd ~/.emacs.d/elpa/vterm-20210217.737
-   mkdir -p build
-   cd build
-   cmake ..
-   make
-   #+end_src
+    Finally I stumbled onto this [[https://github.com/akermu/emacs-libvterm/issues/169][thread]] and found that I have to build
+    =vterm-module= by myself on terminal:
 
-   Then =vterm= worked!
+    #+begin_src shell
+    cd ~/.emacs.d/elpa/vterm-20210217.737
+    mkdir -p build
+    cd build
+    cmake ..
+    make
+    #+end_src
+
+    Then =vterm= worked!
