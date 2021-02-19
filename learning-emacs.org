@@ -61,3 +61,66 @@
     #+end_src
 
     Then =vterm= worked!
+
+*** Configure Shell-Side
+
+    *vterm* document says we can setup our shell for advanced features
+    like /directory tracking/ and /prompt tracking/. So I configured
+    my shell rc like the following sections.
+
+    See this 2 sections for detail:
+    - [[https://github.com/akermu/emacs-libvterm#shell-side-configuration][Shell-side configuration]]
+    - [[https://github.com/akermu/emacs-libvterm#directory-tracking-and-prompt-tracking][Directory tracking and Prompt tracking]]
+
+**** Bash
+
+     I first changed my =.dotfiles/bash/settings-local-mac= to this:
+
+     #+begin_src shell
+     __customize_prompt() {
+     local EXIT_CODE="$?"
+     PS1=""
+
+     local NORMAL="\[\033[0m\]"
+     local BOLD="\[\033[1m\]"
+     local RED="\[\033[31m\]"
+     local GREEN="\[\033[32m\]"
+     local YELLOW="\[\033[33m\]"
+     local BLUE="\[\033[34m\]"
+
+     if [ ! -z $VIRTUAL_ENV ]; then
+     PS1+="(${YELLOW}$(basename $VIRTUAL_ENV)${NORMAL}) "
+     fi
+
+     PS1+="${GREEN}\h${NORMAL}:${BOLD}${BLUE}\W${NORMAL} "
+     if [ $EXIT_CODE != 0 ]; then
+     PS1+="[${RED}$EXIT_CODE${NORMAL}]\$ "
+     else
+     PS1+="[$EXIT_CODE]\$ "
+     fi
+     }
+
+     __customize_prompt
+     #+end_src
+
+     Then appened code snippets from vterm documents to the same file:
+
+     #+begin_src shell
+     # configure vterm (for Emacs)
+     vterm_printf(){
+         if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ] ); then
+             # Tell tmux to pass the escape sequences through
+	     printf "\ePtmux;\e\e]%s\007\e\\" "$1"
+         elif [ "${TERM%%-*}" = "screen" ]; then
+             # GNU screen (screen, screen-256color, screen-256color-bce)
+	     printf "\eP\e]%s\007\e\\" "$1"
+         else
+             printf "\e]%s\e\\" "$1"
+         fi
+     }
+
+     vterm_prompt_end(){
+         vterm_printf "51;A$(whoami)@$(hostname):$(pwd)"
+     }
+     PS1=$PS1'\[$(vterm_prompt_end)\]'
+     #+end_src
