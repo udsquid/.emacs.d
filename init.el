@@ -194,6 +194,7 @@
 (use-package vterm
   :commands vterm
   :bind (("C-c C-x"  . vterm-copy-mode)
+	 ("M-i"      . vterm-beginning-of-line)
 	 ("S-<up>"   . vterm-previous-prompt)
 	 ("S-<down>" . vterm-next-prompt))
   :config
