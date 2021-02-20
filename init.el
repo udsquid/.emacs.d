@@ -193,14 +193,18 @@
 ;; better terminal
 (use-package vterm
   :commands vterm
-  :bind (("C-c C-x"  . vterm-copy-mode)
-	 ("M-i"      . vterm-beginning-of-line)
-	 ("S-<up>"   . vterm-previous-prompt)
-	 ("S-<down>" . vterm-next-prompt))
+  :bind
+  ("C-c C-x" . vterm-copy-mode)
+  (:map vterm-mode-map
+	("M-i"     . vterm-beginning-of-line)
+	("M-p"     . vterm-previous-prompt)
+	("M-n"     . vterm-next-prompt))
   :config
   (setq vterm-shell "/usr/local/bin/bash")
   (setq vterm-max-scrollback 10000)
-  (unbind-key "M-w" vterm-mode-map))
+  (unbind-key "M-w" vterm-mode-map)
+  (unbind-key "M-p" vterm-mode-map)
+  (unbind-key "M-n" vterm-mode-map))
 
 ;; --- handy custom keys ---
 
