@@ -37,6 +37,7 @@
     dependent tools (see [[https://github.com/akermu/emacs-libvterm#requirements][akermu/emacs-libvterm]]):
 
     #+begin_src shell
+    PATH=$PATH:/usr/local/bin
     brew install cmake
     brew install libvterm
     #+end_src
@@ -52,13 +53,28 @@
     Finally I stumbled onto this [[https://github.com/akermu/emacs-libvterm/issues/169][thread]] and found that I have to build
     =vterm-module= by myself on terminal:
 
+    #+name: vterm-path
     #+begin_src shell
-    cd ~/.emacs.d/elpa/vterm-20210217.737
+    ls "$HOME/.emacs.d/elpa" | grep vterm
+    #+end_src
+
+    #+RESULTS: vterm-path
+    : vterm-20210217.737
+
+    #+begin_src shell :var vterm_path=vterm-path :results output
+    cd "$HOME/.emacs.d/elpa/$vterm_path"
     mkdir -p build
     cd build
-    cmake ..
+    /usr/local/bin/cmake ..
     make
     #+end_src
+
+    #+RESULTS:
+    : -- System libvterm detected
+    : -- Configuring done
+    : -- Generating done
+    : -- Build files have been written to: /Users/lab/.emacs.d/elpa/vterm-20210217.737/build
+    : [100%] Built target vterm-module
 
     Then =vterm= worked!
 
