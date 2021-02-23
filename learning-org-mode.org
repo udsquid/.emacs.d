@@ -59,6 +59,12 @@
 
    [[https://orgmode.org/worg/library-of-babel.html][The Library of Babel]]
 
+** Languages
+
+*** Python
+
+    [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html][ob-doc-python]]
+
 * Links
 
 ** Internal Links
