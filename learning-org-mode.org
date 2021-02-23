@@ -49,7 +49,7 @@
    results really depend on the ability of display target. And it seems that
    /_order_/ also matters (note underline doesn't work here).
 
-* Code Blockes
+* Code Blocks
 
 ** How to Specify Execution Results Format
 
