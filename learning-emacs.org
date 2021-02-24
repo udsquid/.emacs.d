@@ -5,9 +5,9 @@
   - completion-at-point
   - which-key-show-top-level
   - yank-rectangle
-    kill in multiple-cursor and get out of it, then yank, it'll
-    only yank the kill-ring from main cursor. If you want to yank
-    all, use this command (C-x r y)
+    - kill in multiple-cursor and get out of it, then yank, it'll
+      only yank the kill-ring from main cursor. If you want to yank
+      all, use this command (C-x r y)
   - shell-command
   - run-python
   - python-shell-send-region
@@ -27,17 +27,20 @@
     First, when I was typing the command =M-x vterm=, the Emacs showed
     me this message:
 
-    =Vterm needs `vterm-module' to work.  Compile it now? (y or n)=
+    #+begin_example
+    Vterm needs `vterm-module' to work.  Compile it now? (y or n)
+    #+end_example
 
-    I click 'y' to proceed, then message showed again for another error:
+    I click =y= to proceed, then message showed again for another error:
 
-    =Vterm needs CMake to be compiled. Please, install CMake=
+    #+begin_example
+    Vterm needs CMake to be compiled. Please, install CMake
+    #+end_example
 
     So I jumped into the terminal and type these command to install
     dependent tools (see [[https://github.com/akermu/emacs-libvterm#requirements][akermu/emacs-libvterm]]):
 
     #+begin_src shell
-    PATH=$PATH:/usr/local/bin
     brew install cmake
     brew install libvterm
     #+end_src
