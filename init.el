@@ -29,7 +29,7 @@
  '(highlight-indent-guides-auto-character-face-perc 20)
  '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
-   '(vterm org org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
+   '(exec-path-from-shell vterm org org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
  '(persp-mode-prefix-key [8388720])
  '(persp-state-default-file (concat user-emacs-directory ".persp")))
 (custom-set-faces
@@ -205,6 +205,11 @@
   (unbind-key "M-w" vterm-mode-map)
   (unbind-key "M-p" vterm-mode-map)
   (unbind-key "M-n" vterm-mode-map))
+
+;; copy environment variables
+(use-package exec-path-from-shell)
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
 
 ;; --- handy custom keys ---
 
