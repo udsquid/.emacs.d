@@ -146,6 +146,43 @@
 
    Tip: use ~S-M-RET~ to insert a new checkbox (org-insert-todo-heading)
 
+* PDF
+
+  I was trying to install =pdflatex= on Mac:
+
+  #+begin_src shell :results silent
+  brew install --cask mactex-no-gui
+  #+end_src
+
+  But brew kept on getting failures when downloading ghostscript fonts:
+
+  #+begin_example
+  ==> Downloading https://downloads.sourceforge.net/project/gs-fonts/gs-fonts/8.11%20%28base%2035%2C%20GPL%29/ghostscript-fonts-std-8.11.tar.gz
+  ######################################################################## 100.0%
+  curl: (7) Failed to connect to nchc.dl.sourceforge.net port 443: Operation timed out
+  Error: Failed to download resource "ghostscript--fonts"
+  Download failed: https://downloads.sourceforge.net/project/gs-fonts/gs-fonts/8.11%20%28base%2035%2C%20GPL%29/ghostscript-fonts-std-8.11.tar.gz
+  #+end_example
+
+  Maybe try another day :(
+
+  Updated: I tried again on [2021-02-24 Wed] and it successed!
+
+  Then, restart the terminal (or vterm, in my case).
+
+  Used the following command to check the binary path:
+
+  #+begin_src shell
+  which pdflatex
+  #+end_src
+
+  #+RESULTS:
+  : /Library/TeX/texbin/pdflatex
+
+  [2021-02-24 Wed] Updated: although PDF function is working now,
+  but the output file seemed not so pretty. Maybe there's another
+  better way to export as PDF.
+
 * Misc
 
 ** Sending Emails
