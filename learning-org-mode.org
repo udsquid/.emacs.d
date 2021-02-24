@@ -49,6 +49,11 @@
    results really depend on the ability of display target. And it seems that
    /_order_/ also matters (note underline doesn't work here).
 
+** Special Symbols
+
+   Use =org-entities-help= can show you all the special characters
+   (latin words, something like that).
+
 * Code Blocks
 
 ** How to Specify Execution Results Format
