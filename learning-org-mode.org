@@ -30,18 +30,24 @@
 	    at the end of last BORDER?)
 
    So the following snippets are valid:
-/line 1/ <-- at the beginning of the line
+
+   #+begin_example
+/line 1/
        /line  2/
        (/line 3/)
        -/line 4/
        -/---line 5---/-
        -*first*-/second/-+third+
+   #+end_example
 
    Therefore, you *CANNOT* mark like these:
+
+   #+begin_example
        cannot-markup/word/in-line
        / some whitespace between /
        / -text-/
        /-text- /
+   #+end_example
 
    Other details can be found at [[https://orgmode.org/worg/dev/org-syntax.html#Emphasis_Markers][here]].
 
