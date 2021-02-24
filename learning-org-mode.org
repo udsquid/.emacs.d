@@ -27,8 +27,8 @@
      - BORDER and BODY: are separated by whitespaces
                         (also cannot figure this out,
 			maybe cannot have whitespace
-                        at the beginning of first BORDER?
-                        at the end of last BORDER?)
+			at the beginning of first BORDER?
+			at the end of last BORDER?)
 
    So the following snippets are valid:
 
