@@ -1,3 +1,5 @@
+#+author: Neil Lin
+
 * Useful Commands
 
   - helm-occur
