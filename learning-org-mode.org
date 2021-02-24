@@ -13,21 +13,22 @@
 
 ** Syntax
 
-   =PRE MARKER CONTENTS MARKER POST=
+   Detailed syntax is here:
+   : PRE MARKER CONTENTS MARKER POST
 
-   PRE: whitespace, -, (, {, ', ", or beginning of line
-
-   MARKER: those special characters in [[Basic]] section
-
-   CONTENTS: goes with this format =BORDER BODY BORDER=
-       BORDER: non-whitespace character
-       BODY: any character,
+   - PRE: whitespace, -, (, {, ', ", or beginning of line
+   - MARKER: those special characters in [[Basic]] section
+   - CONTENTS: goes with this format =BORDER BODY BORDER=
+   - BORDER: non-whitespace character
+     - BODY: any character,
              but not more than 3 lines <-- cannot figure out,
-	                                   maybe a very long line?
-       BORDER and BODY are separated by whitespaces
-           (also cannot figure this out,
-	    maybe cannot have whitespace at the beginning of first BORDER?
-	    at the end of last BORDER?)
+	     maybe a very long line?
+
+     - BORDER and BODY: are separated by whitespaces
+                        (also cannot figure this out,
+			maybe cannot have whitespace
+                        at the beginning of first BORDER?
+                        at the end of last BORDER?)
 
    So the following snippets are valid:
 
