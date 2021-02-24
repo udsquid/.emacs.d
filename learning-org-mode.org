@@ -62,6 +62,33 @@
    Use =org-entities-help= can show you all the special characters
    (latin words, something like that).
 
+** Literal Examples
+
+   You can use the following format to show some literal text:
+
+   : #+begin_example
+   : Put some text here.
+   : #+end_example
+
+   Another cool thing is that we can create an anchor by using =ref= keyword:
+
+   : #+begin_example -r
+   : I'll be referenced by the next line. (ref:lit-ref-ex)
+   : #+end_example
+
+   Then we can reference it like this:
+   : [[(lit-ref-ex)]]
+   or this:
+   : [[(lit-ref-ex)][Literal Ref Example]]
+
+   See the following example as a demo:
+
+   #+begin_example -r
+   head back to me (ref:back-to-me)
+   #+end_example
+
+   And here is the [[(back-to-me)][link/jump/portal]]
+
 * Code Blocks
 
 ** How to Specify Execution Results Format
