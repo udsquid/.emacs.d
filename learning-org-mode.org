@@ -236,8 +236,7 @@
   but the output file seemed not so pretty. Maybe there's another
   better way to export as PDF.
 
-* Misc
+* Backlog
 
-** Sending Emails
-
-   [[https://github.com/howardabrams/dot-files/blob/master/emacs-mail.org#sending-email][Sending Email]]
+  - [[https://github.com/howardabrams/dot-files/blob/master/emacs-mail.org#sending-email][Sending Email]]
+  - [[https://www.orgroam.com/][Plain-text personal wiki system]]
