@@ -1,3 +1,4 @@
+#+title: Notes of Learning Org Mode
 #+author: Neil Lin
 
 * Markups
