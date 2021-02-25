@@ -29,7 +29,7 @@
  '(highlight-indent-guides-auto-character-face-perc 20)
  '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
-   '(exec-path-from-shell vterm org org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
+   '(org-bullets exec-path-from-shell vterm org org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
  '(persp-mode-prefix-key [8388720])
  '(persp-state-default-file (concat user-emacs-directory ".persp")))
 (custom-set-faces
@@ -174,10 +174,29 @@
 (use-package magit)
 
 ;; better note app
+(defun org-font-setup ()
+  ;; Replace list hyphen with dot
+  (font-lock-add-keywords 'org-mode
+			  '(("^ +\\([-*]\\) "
+			     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+  ;; Set faces for heading levels
+  (dolist (face '((org-level-1 . 1.5)
+                  (org-level-2 . 1.4)
+                  (org-level-3 . 1.3)
+                  (org-level-4 . 1.2)
+                  (org-level-5 . 1.2)
+                  (org-level-6 . 1.2)
+                  (org-level-7 . 1.2)
+                  (org-level-8 . 1.2)))
+    (set-face-attribute (car face) nil :family "Arial Rounded MT Bold" :weight 'regular :height (cdr face)))
+  )
+
 (use-package org
   :bind ("C-c C-." . org-insert-structure-template)
+  :hook (org-mode . org-font-setup)
   :config
   (setq org-confirm-babel-evaluate nil)
+  (setq org-hide-emphasis-markers t)
 
   ;; enable language execution
   (org-babel-do-load-languages 'org-babel-load-languages
@@ -190,6 +209,13 @@
   (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
   (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
   (add-to-list 'org-structure-template-alist '("py" . "src python")))
+
+(use-package org-bullets
+  :hook (org-mode . org-bullets-mode)
+  :custom
+  (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
+
+;;Avenir Next
 
 ;; better terminal
 (use-package vterm
