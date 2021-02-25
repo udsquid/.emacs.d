@@ -3,3 +3,6 @@
 .persp
 tramp
 transient/
+auto-save-list/
+elpa/
+recentf
