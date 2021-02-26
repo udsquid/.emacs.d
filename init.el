@@ -190,6 +190,8 @@
                   (org-level-8        . 1.2)
 		  (org-document-title . 2.0)))
     (set-face-attribute (car face) nil :family "Arial Rounded MT Bold" :weight 'regular :height (cdr face)))
+  (set-face-attribute 'org-verbatim nil :foreground "white" :background "rosybrown4")
+  (set-face-attribute 'org-code nil     :foreground "black" :background "dark gray")
   )
 
 (defun org-setup-mode ()
