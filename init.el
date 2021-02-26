@@ -180,14 +180,15 @@
 			  '(("^ +\\([-*]\\) "
 			     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
   ;; Set faces for heading levels
-  (dolist (face '((org-level-1 . 1.5)
-                  (org-level-2 . 1.4)
-                  (org-level-3 . 1.3)
-                  (org-level-4 . 1.2)
-                  (org-level-5 . 1.2)
-                  (org-level-6 . 1.2)
-                  (org-level-7 . 1.2)
-                  (org-level-8 . 1.2)))
+  (dolist (face '((org-level-1        . 1.5)
+                  (org-level-2        . 1.4)
+                  (org-level-3        . 1.3)
+                  (org-level-4        . 1.2)
+                  (org-level-5        . 1.2)
+                  (org-level-6        . 1.2)
+                  (org-level-7        . 1.2)
+                  (org-level-8        . 1.2)
+		  (org-document-title . 2.0)))
     (set-face-attribute (car face) nil :family "Arial Rounded MT Bold" :weight 'regular :height (cdr face)))
   )
 
