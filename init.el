@@ -29,7 +29,7 @@
  '(highlight-indent-guides-auto-character-face-perc 20)
  '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
-   '(org-bullets exec-path-from-shell vterm org org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
+   '(visual-fill-column org-bullets exec-path-from-shell vterm org org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
  '(persp-mode-prefix-key [8388720])
  '(persp-state-default-file (concat user-emacs-directory ".persp")))
 (custom-set-faces
@@ -174,7 +174,7 @@
 (use-package magit)
 
 ;; better note app
-(defun org-font-setup ()
+(defun org-setup-font ()
   ;; Replace list hyphen with dot
   (font-lock-add-keywords 'org-mode
 			  '(("^ +\\([-*]\\) "
@@ -192,12 +192,16 @@
     (set-face-attribute (car face) nil :family "Arial Rounded MT Bold" :weight 'regular :height (cdr face)))
   )
 
+(defun org-setup-mode ()
+  (visual-line-mode t))
+
 (use-package org
   :bind ("C-c C-." . org-insert-structure-template)
-  :hook (org-mode . org-font-setup)
+  :hook (org-mode . org-setup-mode)
   :config
   (setq org-confirm-babel-evaluate nil)
   (setq org-hide-emphasis-markers t)
+  (org-setup-font)
 
   ;; enable language execution
   (org-babel-do-load-languages 'org-babel-load-languages
@@ -215,6 +219,13 @@
   :hook (org-mode . org-bullets-mode)
   :custom
   (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
+
+(defun org-setup-visual ()
+  (setq visual-fill-column-width 80)
+  (visual-fill-column-mode 1))
+
+(use-package visual-fill-column
+  :hook (org-mode . org-setup-visual))
 
 ;; better terminal
 (use-package vterm
