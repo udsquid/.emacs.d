@@ -16,6 +16,8 @@
   - python-shell-send-defun
   - python-shell-send-buffer
   - python-shell-send-file
+  - what-cursor-position
+  - list-colors-display
 
 * Lessons Learned
 
