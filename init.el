@@ -216,8 +216,6 @@
   :custom
   (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
 
-;;Avenir Next
-
 ;; better terminal
 (use-package vterm
   :commands vterm
