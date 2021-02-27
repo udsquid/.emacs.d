@@ -160,14 +160,3 @@
     #+begin_src shell :results output
     brew install font-et-book
     #+end_src
-
-    #+RESULTS:
-    : ==> Downloading https://github.com/edwardtufte/et-book/archive/gh-pages.zip
-    : ==> Downloading from https://codeload.github.com/edwardtufte/et-book/zip/gh-pages
-    : ==> Installing Cask font-et-book
-    : ==> Moving Font 'et-book-bold-line-figures.ttf' to '/Users/lab/Library/Fonts/et-book-bold-line-figures.ttf'
-    : ==> Moving Font 'et-book-display-italic-old-style-figures.ttf' to '/Users/lab/Library/Fonts/et-book-display-italic-old-style-figures.ttf'
-    : ==> Moving Font 'et-book-roman-line-figures.ttf' to '/Users/lab/Library/Fonts/et-book-roman-line-figures.ttf'
-    : ==> Moving Font 'et-book-roman-old-style-figures.ttf' to '/Users/lab/Library/Fonts/et-book-roman-old-style-figures.ttf'
-    : ==> Moving Font 'et-book-semi-bold-old-style-figures.ttf' to '/Users/lab/Library/Fonts/et-book-semi-bold-old-style-figures.ttf'
-    : 🍺  font-et-book was successfully installed!
