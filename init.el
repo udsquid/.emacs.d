@@ -207,7 +207,8 @@
   )
 
 (defun org-setup-mode ()
-  (visual-line-mode t))
+  (visual-line-mode t)
+  (org-indent-mode))
 
 (use-package org
   :bind ("C-c C-." . org-insert-structure-template)
