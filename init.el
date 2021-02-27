@@ -179,6 +179,7 @@
   (font-lock-add-keywords 'org-mode
 			  '(("^ +\\([-*]\\) "
 			     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
   ;; Set faces for heading levels
   (dolist (face '((org-level-1        . 1.5)
                   (org-level-2        . 1.4)
@@ -189,9 +190,18 @@
                   (org-level-7        . 1.2)
                   (org-level-8        . 1.2)
 		  (org-document-title . 2.0)))
-    (set-face-attribute (car face) nil :family "Arial Rounded MT Bold" :weight 'regular :height (cdr face)))
-  (set-face-attribute 'org-verbatim nil :foreground "white" :background "rosybrown4")
-  (set-face-attribute 'org-code nil     :foreground "black" :background "dark gray")
+    (set-face-attribute (car face) nil
+			:family "Arial Rounded MT Bold"
+			:weight 'regular
+			:height (cdr face)))
+
+  ;; set faces for markups & code blocks
+  (set-face-attribute 'org-verbatim nil
+		      :foreground "orchid2")
+  (set-face-attribute 'org-code nil
+		      :foreground "light green")
+  (set-face-attribute 'org-block nil
+		      :background nil)
   )
 
 (defun org-setup-mode ()
