@@ -197,8 +197,10 @@
 
   ;; set faces for markups & code blocks
   (set-face-attribute 'org-verbatim nil
+		      :inherit '(shadow fixed-pitch)
 		      :foreground "orchid2")
   (set-face-attribute 'org-code nil
+		      :inherit '(shadow)
 		      :foreground "light green")
   (set-face-attribute 'org-block nil
 		      :background nil)
