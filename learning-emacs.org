@@ -18,6 +18,7 @@
   - python-shell-send-file
   - what-cursor-position
   - list-colors-display
+  - what-cursor-position
 
 * Lessons Learned
 
