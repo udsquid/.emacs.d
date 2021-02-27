@@ -203,6 +203,7 @@
   :config
   (setq org-confirm-babel-evaluate nil)
   (setq org-hide-emphasis-markers t)
+  (setq org-startup-folded nil)
   (org-setup-font)
 
   ;; enable language execution
