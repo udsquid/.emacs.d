@@ -51,8 +51,8 @@
 
 ;; setup font
 (set-face-attribute 'default nil
-		    :font "DejaVu Sans Mono"
-		    :height 180)
+		    :font    "DejaVu Sans Mono"
+		    :height  180)
 
 ;; cursor jumping package
 (use-package avy
@@ -72,9 +72,9 @@
 
 ;; powerful search framework
 (use-package helm
-  :bind (("M-x" . helm-M-x)
+  :bind (("M-x"             . helm-M-x)
 	 ([remap find-file] . helm-find-files)
-	 ([remap occur] . helm-occur))
+	 ([remap occur]     . helm-occur))
   :init
   (helm-mode t))
 
@@ -115,8 +115,8 @@
 (define-prefix-command 'mc-map)
 (global-set-key (kbd "s-m") 'mc-map)
 (use-package multiple-cursors
-  :bind (("s-t" . mc/mark-next-like-this)
-	 ("s-w" . mc/mark-next-like-this-word)
+  :bind (("s-t"   . mc/mark-next-like-this)
+	 ("s-w"   . mc/mark-next-like-this-word)
 	 ("s-m e" . mc/mark-more-like-this-extended)
 	 ("s-m l" . mc/edit-lines)
 	 ("s-m a" . mc/mark-all-like-this)
