@@ -152,3 +152,8 @@ Directly install fonts by *brew*:
 #+begin_src shell :results output
 brew install font-et-book
 #+end_src
+
+* Others Emacs Configuration
+
+- [[https://github.com/daviwil/emacs-from-scratch/blob/master/init.el][daviwil]]
+- [[https://github.com/zzamboni/dot-emacs/blob/master/init.org][zzamboni]]
