@@ -220,6 +220,12 @@ which pdflatex
 
 [2021-02-24 Wed] Updated: although PDF function is working now, but the output file seemed not so pretty. Maybe there's another better way to export as PDF.
 
+* Drawers
+
+** Log Notes into Drawers
+
+To create a logbook, type =C-c C-z=. But this feature need to be configured first by setting =org-log-into-drawer= a proper value.
+
 * Backlog
 
 - [[https://github.com/howardabrams/dot-files/blob/master/emacs-mail.org#sending-email][Sending Email]]
