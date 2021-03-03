@@ -97,6 +97,13 @@ And here is the [[(back-to-me)][link/jump/portal]]
 
 [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html][ob-doc-python]]
 
+** How to Load Language Library Dynamically
+
+Type command =M-x load-library= and then keyin the language library you want, such as:
+
+- ob-R
+- ob-ruby
+
 * Links
 
 ** Internal Links
