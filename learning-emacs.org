@@ -80,6 +80,14 @@ make
 
 Then =vterm= worked!
 
+[2021-03-03 Wed] sometimes you still face an issue when running =make= command, try to update XCode command line tool to solve it:
+
+#+begin_src shell
+xcode-select --install
+#+end_src
+
+#+RESULTS:
+
 *** Configure Shell-Side
 
 *vterm* document says we can setup our shell for advanced features like /directory tracking/ and /prompt tracking/. So I configured my shell rc like the following sections.
