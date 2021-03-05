@@ -231,7 +231,10 @@ which pdflatex
 
 ** Log Notes into Drawers
 
-To create a logbook, type =C-c C-z=. But this feature need to be configured first by setting =org-log-into-drawer= a proper value.
+To create a logbook, type =C-c C-z=. But this feature need to be configured first by setting =org-log-into-drawer= a proper value:
+- =nil=: insert note after the headline
+- =t=: /LOGBOOK/ (default drawer name)
+- other string: rename drawer
 
 * Backlog
 
