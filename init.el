@@ -82,6 +82,8 @@
 (setq auto-save-default nil)
 ;; disable backup file
 (setq make-backup-files nil)
+;; disable lock file mechanism
+(setq create-lockfiles nil)
 
 ;; turn off newbie protection
 (put 'narrow-to-region 'disabled nil)
