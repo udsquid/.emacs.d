@@ -165,6 +165,10 @@ The [[https://orgmode.org/manual/Using-Header-Arguments.html][official manual]] 
     #+end_src
 #+end_example
 
+** In-Buffer Option
+
+In org-mode, you can change its behavior by setting variables named as =org-SOME-VAR=. But sometimes you don't want to enable them for all org buffers, you just want to tweak them in some indivisual buffers. So you may search on the internet by using keyword *in-buffer option*.
+
 * Todos
 
 ** Track Progress
