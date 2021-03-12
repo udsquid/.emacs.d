@@ -282,6 +282,8 @@ To create a logbook, type =C-c C-z=. But this feature need to be configured firs
 
 When choosing a target, only the level 1 headlines in the current buffer are considered. If you want to change this behavior, see =org-refile-targets=.
 
+[2021-03-12 Fri] Stumbled a [[https://blog.aaronbieber.com/2017/03/19/organizing-notes-with-refile.html][page]] talking about how to list targets in a better way, which we can intuitively see the structure of different level headings.
+
 *** Archiving
 
 If you want to archive headings into another file, check =org-archive-location= variable or in-buffer option =ARCHIVE=, like this:
