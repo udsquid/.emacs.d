@@ -104,6 +104,33 @@ Type command =M-x load-library= and then keyin the language library you want, su
 - ob-R
 - ob-ruby
 
+** Setting Parameters
+
+You can have several ways to set parameters for code blocks.
+
+The 1st one is to set them inline with block header:
+
+: #+begin_src python :dir /var
+: from os import listdir
+: return listdir('.')
+: #+end_src
+
+and this is another way for readability when you have too many parameters:
+
+: #+header: :dir /ssh:te1:/etc
+: #+header: :var USER='super'
+: #+begin_src shell
+: grep "$USER" passwd
+: #+end_src
+
+The 2nd way to do this is add them with heading:
+
+: * A Heading
+:   :PROPERTIES:
+:   :header-args: :dir /ssh:te2:/etc
+:   :header-args:python: :dir /ssh:te2:/
+:   :END:
+
 * Links
 
 ** Internal Links
