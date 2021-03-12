@@ -212,6 +212,11 @@
   (visual-line-mode t)
   (org-indent-mode))
 
+(defun org-setup-refile ()
+  (setq org-refile-targets '((nil :maxlevel . 3)))
+  (setq org-outline-path-complete-in-steps nil)
+  (setq org-refile-use-outline-path 'file))
+
 (use-package org
   :bind ("C-c C-." . org-insert-structure-template)
   :hook (org-mode . org-setup-mode)
@@ -221,6 +226,7 @@
   (setq org-startup-folded nil)
   (setq org-log-into-drawer t)
   (org-setup-font)
+  (org-setup-refile)
 
   ;; enable language execution
   (org-babel-do-load-languages 'org-babel-load-languages
