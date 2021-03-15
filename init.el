@@ -215,7 +215,8 @@
 (defun org-setup-refile ()
   (setq org-refile-targets '((nil :maxlevel . 3)))
   (setq org-outline-path-complete-in-steps nil)
-  (setq org-refile-use-outline-path 'file))
+  (setq org-refile-use-outline-path 'file)
+  (setq org-refile-allow-creating-parent-nodes 'confirm))
 
 (use-package org
   :bind ("C-c C-." . org-insert-structure-template)
