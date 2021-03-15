@@ -18,6 +18,10 @@
 - list-colors-display
 - what-cursor-position
 
+** Helm
+
+- helm-yank-selection (=C-c C-y=): during helm filtering and selection mode, copy the current selection item
+
 * Lessons Learned
 
 ** vterm
