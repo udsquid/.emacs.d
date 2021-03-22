@@ -290,6 +290,13 @@ If you want to archive headings into another file, check =org-archive-location= 
 
 : #+ARCHIVE: %s_done::
 
+* Org-Roam
+
+** How Other People Use Org-Roam
+
+- Nat Eliason
+  - [[https://www.nateliason.com/blog/roam][Roam: Why I Love It and How I Use It]]
+
 * Backlog
 
 - [[https://github.com/howardabrams/dot-files/blob/master/emacs-mail.org#sending-email][Sending Email]]
