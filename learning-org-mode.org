@@ -137,6 +137,8 @@ The 2nd way to do this is add them with heading:
 
 [[https://orgmode.org/manual/Internal-Links.html][Internal Links]]
 
+Call =org-store-link= can copy the heading address for later use, call =org-insert-link= (=C-c C-l=) to insert that link.
+
 * Properties
 
 ** What is a Property in Org-Mode?
