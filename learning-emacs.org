@@ -21,6 +21,7 @@
 ** Emacs
 
 - eval-expression (=M-:=): evaluate elisp right in the mini-buffer
+- check-parens: check missing parenthesis
 
 ** Helm
 
