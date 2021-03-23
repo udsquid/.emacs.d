@@ -27,6 +27,10 @@
 
 - helm-yank-selection (=C-c C-y=): during helm filtering and selection mode, copy the current selection item
 
+** General
+
+- general-describe-keybindings: show current local & global key-bindings maintained by general package
+
 * Lessons Learned
 
 ** vterm
