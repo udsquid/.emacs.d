@@ -335,10 +335,14 @@
     "pr" '(persp-rename        :which-key "rename")
 
     ;; helpful
-    "h"   '(:ignore t :which-key "help")
+    "h"   '(:ignore t        :which-key "help")
     "hf"  '(helpful-callable :which-key "function")
     "hv"  '(helpful-variable :which-key "variable")
     "hk"  '(helpful-key      :which-key "key")
+
+    ;; file
+    "f"   '(:ignore t                :which-key "file")
+    "fp"  '(ns-open-file-using-panel :which-key "using window")
     )
   )
 
