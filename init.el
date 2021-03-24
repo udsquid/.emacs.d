@@ -29,7 +29,7 @@
  '(highlight-indent-guides-auto-character-face-perc 20)
  '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
-   '(general org-roam undo-fu visual-fill-column org-bullets exec-path-from-shell vterm org org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
+   '(hydra general org-roam undo-fu visual-fill-column org-bullets exec-path-from-shell vterm org org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
  '(persp-mode-prefix-key [8388720])
  '(persp-state-default-file (concat user-emacs-directory ".persp")))
 (custom-set-faces
@@ -335,8 +335,16 @@
     "ps" '(persp-state-save    :which-key "save .persp")
     "pk" '(persp-kill          :which-key "kill")
     "pm" '(persp-set-buffer    :which-key "move")
-    "pr" '(persp-rename        :which-key "rename")
+    "pr" '(persp-rename        :which-key "rename")))
 
-    "t"  '(:ignore t           :which-key "text")
-    "ti" '(text-scale-increase :which-key "in")
-    "td" '(text-scale-decrease :which-key "out")))
+(use-package hydra
+  :config
+  (defhydra hydra-text-scale (:timeout 4)
+    "scale text"
+    ("l" text-scale-increase   "large")
+    ("s" text-scale-decrease   "small")
+    ("r" (text-scale-adjust 0) "reset")
+    ("q" nil                   "finish" :exit t)))
+
+(my/leader-keys
+  "t" '(hydra-text-scale/body :which-key "text"))
