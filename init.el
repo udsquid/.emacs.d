@@ -29,7 +29,7 @@
  '(highlight-indent-guides-auto-character-face-perc 20)
  '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
-   '(org-roam undo-fu visual-fill-column org-bullets exec-path-from-shell vterm org org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
+   '(general org-roam undo-fu visual-fill-column org-bullets exec-path-from-shell vterm org org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
  '(persp-mode-prefix-key [8388720])
  '(persp-state-default-file (concat user-emacs-directory ".persp")))
 (custom-set-faces
@@ -318,3 +318,25 @@
 (global-set-key (kbd "M-t") 'capitalize-word)
 
 (global-set-key (kbd "M-z") 'undo)
+
+;; key-binding manager
+(use-package general
+  :config
+  (general-auto-unbind-keys)
+  (general-create-definer my/leader-keys
+    :prefix "M-SPC")
+
+  (my/leader-keys
+    ;; perspective
+    "p"  '(:ignore t           :which-key "persp")
+    "pt" '(persp-switch        :which-key "switch or create")
+    "pp" '(persp-switch-last   :which-key "switch back")
+    "pl" '(persp-state-load    :which-key "load .persp")
+    "ps" '(persp-state-save    :which-key "save .persp")
+    "pk" '(persp-kill          :which-key "kill")
+    "pm" '(persp-set-buffer    :which-key "move")
+    "pr" '(persp-rename        :which-key "rename")
+
+    "t"  '(:ignore t           :which-key "text")
+    "ti" '(text-scale-increase :which-key "in")
+    "td" '(text-scale-decrease :which-key "out")))
