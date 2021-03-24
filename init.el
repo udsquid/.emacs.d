@@ -335,15 +335,21 @@
     "pr" '(persp-rename        :which-key "rename")
 
     ;; helpful
-    "h"   '(:ignore t        :which-key "help")
-    "hf"  '(helpful-callable :which-key "function")
-    "hv"  '(helpful-variable :which-key "variable")
-    "hk"  '(helpful-key      :which-key "key")
+    "h"  '(:ignore t        :which-key "help")
+    "hf" '(helpful-callable :which-key "function")
+    "hv" '(helpful-variable :which-key "variable")
+    "hk" '(helpful-key      :which-key "key")
 
     ;; file
-    "f"   '(:ignore t                :which-key "file")
-    "fo"  '(find-file                :which-key "open")
-    "fp"  '(ns-open-file-using-panel :which-key "open via window")
+    "f"  '(:ignore t                :which-key "file")
+    "fo" '(find-file                :which-key "open")
+    "fp" '(ns-open-file-using-panel :which-key "open via window")
+
+    ;; multiple-cursors
+    "m"  '(:ignore t                       :which-key "mark")
+    "me" '(mc/mark-more-like-this-extended :which-key "extended")
+    "ml" '(mc/edit-lines                   :which-key "line")
+    "mr" '(mc/mark-all-in-region           :which-key "region")
     )
   )
 
@@ -354,7 +360,14 @@
     ("l" text-scale-increase   "large")
     ("s" text-scale-decrease   "small")
     ("r" (text-scale-adjust 0) "reset")
-    ("q" nil                   "finish" :exit t)))
+    ("q" nil                   "finish" :exit t))
+  (defhydra hydra-multiple-cursors (:timeout 4)
+    "mark"
+    ("n" mc/mark-next-like-this      "next")
+    ("w" mc/mark-next-like-this-word "word")
+    ("a" mc/mark-all-like-this       "all"))
+  )
 
 (my/leader-keys
-  "t" '(hydra-text-scale/body :which-key "text"))
+  "t"  '(hydra-text-scale/body       :which-key "text")
+  "mt" '(hydra-multiple-cursors/body :which-key "this"))
