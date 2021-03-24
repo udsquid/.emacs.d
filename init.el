@@ -342,7 +342,8 @@
 
     ;; file
     "f"   '(:ignore t                :which-key "file")
-    "fp"  '(ns-open-file-using-panel :which-key "using window")
+    "fo"  '(find-file                :which-key "open")
+    "fp"  '(ns-open-file-using-panel :which-key "open via window")
     )
   )
 
