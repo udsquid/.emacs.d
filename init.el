@@ -65,10 +65,7 @@
 (setq column-number-mode t)
 
 ;; better help system
-(use-package helpful
-  :bind (("C-h f" . helpful-callable)
-	 ("C-h v" . helpful-variable)
-	 ("C-h k" . helpful-key)))
+(use-package helpful)
 
 ;; powerful search framework
 (use-package helm
@@ -335,7 +332,15 @@
     "ps" '(persp-state-save    :which-key "save .persp")
     "pk" '(persp-kill          :which-key "kill")
     "pm" '(persp-set-buffer    :which-key "move")
-    "pr" '(persp-rename        :which-key "rename")))
+    "pr" '(persp-rename        :which-key "rename")
+
+    ;; helpful
+    "h"   '(:ignore t :which-key "help")
+    "hf"  '(helpful-callable :which-key "function")
+    "hv"  '(helpful-variable :which-key "variable")
+    "hk"  '(helpful-key      :which-key "key")
+    )
+  )
 
 (use-package hydra
   :config
