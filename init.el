@@ -299,6 +299,19 @@
 (global-unset-key (kbd "C-x C-p"))
 (global-set-key (kbd "C-x C-p C-f") 'project-find-file)
 
+(defun split-window-down-and-move-there-dammit ()
+  (interactive)
+  (split-window-below)
+  (windmove-down))
+
+(defun split-window-right-and-move-there-dammit ()
+  (interactive)
+  (split-window-right)
+  (windmove-right))
+
+(global-set-key (kbd "C-x 2") 'split-window-down-and-move-there-dammit)
+(global-set-key (kbd "C-x 3") 'split-window-right-and-move-there-dammit)
+
 ;; quick switch between two recent buffers
 (fset 'quick-switch-buffer [?\C-x ?b return])
 (global-set-key (kbd "s-f") 'quick-switch-buffer)
