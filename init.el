@@ -363,6 +363,12 @@
     "me" '(mc/mark-more-like-this-extended :which-key "extended")
     "ml" '(mc/edit-lines                   :which-key "line")
     "mr" '(mc/mark-all-in-region           :which-key "region")
+
+    ;; org-roam
+    "r"  '(:ignore t          :which-key "org-roam")
+    "rf" '(org-roam-find-file :which-key "find file")
+    "ri" '(org-roam-insert    :which-key "insert")
+    "rb" '(org-roam           :which-key "org-roam buffer")
     )
   )
 
