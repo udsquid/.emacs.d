@@ -111,16 +111,7 @@
   (dashboard-setup-startup-hook))
 
 ;; edit multiple lines at once
-(define-prefix-command 'mc-map)
-(global-set-key (kbd "s-m") 'mc-map)
-(use-package multiple-cursors
-  :bind (("s-t"   . mc/mark-next-like-this)
-	 ("s-w"   . mc/mark-next-like-this-word)
-	 ("s-m e" . mc/mark-more-like-this-extended)
-	 ("s-m l" . mc/edit-lines)
-	 ("s-m a" . mc/mark-all-like-this)
-	 ("s-m r" . mc/mark-all-in-region)
-	 ("s-m y" . yank-rectangle)))
+(use-package multiple-cursors)
 
 ;; pretty icons
 ;; remember to run command: all-the-icons-install-fonts
@@ -363,6 +354,7 @@
     "me" '(mc/mark-more-like-this-extended :which-key "extended")
     "ml" '(mc/edit-lines                   :which-key "line")
     "mr" '(mc/mark-all-in-region           :which-key "region")
+    "my" '(yank-rectangle                  :which-key "yank multiple")
 
     ;; org-roam
     "r"  '(:ignore t          :which-key "org-roam")
