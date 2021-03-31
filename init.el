@@ -206,6 +206,15 @@
   (setq org-refile-use-outline-path 'file)
   (setq org-refile-allow-creating-parent-nodes 'confirm))
 
+(defun org-setup-agenda ()
+  (setq org-directory "~/Dropbox/org/")
+  (setq org-agenda-files
+	(list
+	 (concat org-directory "inbox.org")))
+  (setq org-capture-templates
+	`(("i" "Inbox" entry (file ,(concat org-directory "inbox.org"))
+	   "* TODO %?"))))
+
 (use-package org
   :bind ("C-c C-." . org-insert-structure-template)
   :hook (org-mode . org-setup-mode)
@@ -216,6 +225,7 @@
   (setq org-log-into-drawer t)
   (org-setup-font)
   (org-setup-refile)
+  (org-setup-agenda)
 
   ;; enable language execution
   (org-babel-do-load-languages 'org-babel-load-languages
@@ -356,6 +366,11 @@
     "mr" '(mc/mark-all-in-region           :which-key "region")
     "my" '(yank-rectangle                  :which-key "yank multiple")
 
+    ;; org-mode
+    "o"  '(:ignore t   :which-key "org-mode")
+    "oc" '(org-capture :which-key "capture")
+    "og" '(org-agenda  :which-key "agenda")
+
     ;; org-roam
     "r"  '(:ignore t          :which-key "org-roam")
     "rf" '(org-roam-find-file :which-key "find file")
@@ -390,4 +405,4 @@
 (my/leader-keys
   "t"  '(hydra-text-scale/body          :which-key "text")
   "mt" '(hydra-multiple-cursors/body    :which-key "this")
-  "o"  '(hydra-org-heading/body         :which-key "org heading"))
+  "oh"  '(hydra-org-heading/body         :which-key "org heading"))
