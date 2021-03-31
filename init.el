@@ -367,9 +367,10 @@
     "my" '(yank-rectangle                  :which-key "yank multiple")
 
     ;; org-mode
-    "o"  '(:ignore t   :which-key "org-mode")
-    "oc" '(org-capture :which-key "capture")
-    "og" '(org-agenda  :which-key "agenda")
+    "o"  '(:ignore t      :which-key "org-mode")
+    "oc" '(org-capture    :which-key "capture")
+    "og" '(org-agenda     :which-key "agenda")
+    "ot" '(org-time-stamp :which-key "timestamp")
 
     ;; org-roam
     "r"  '(:ignore t          :which-key "org-roam")
