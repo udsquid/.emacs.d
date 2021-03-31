@@ -385,8 +385,17 @@
     ("n" mc/mark-next-like-this      "next")
     ("w" mc/mark-next-like-this-word "word")
     ("a" mc/mark-all-like-this       "all"))
+  (defhydra hydra-org-heading (:timeout 4)
+    "heading"
+    ("n" org-next-visible-heading        "next")
+    ("p" org-previous-visible-heading    "prev")
+    ("f" org-forward-heading-same-level  "forward")
+    ("b" org-backward-heading-same-level "backward")
+    ("u" (org-up-heading-safe)           "up")
+    ("q" nil                             "finish" :exit t))
   )
 
 (my/leader-keys
-  "t"  '(hydra-text-scale/body       :which-key "text")
-  "mt" '(hydra-multiple-cursors/body :which-key "this"))
+  "t"  '(hydra-text-scale/body          :which-key "text")
+  "mt" '(hydra-multiple-cursors/body    :which-key "this")
+  "o"  '(hydra-org-heading/body         :which-key "org heading"))
