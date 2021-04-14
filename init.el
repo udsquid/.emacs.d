@@ -111,7 +111,8 @@
   (dashboard-setup-startup-hook))
 
 ;; edit multiple lines at once
-(use-package multiple-cursors)
+(use-package multiple-cursors
+  :bind (("s-t" . mc/mark-next-like-this)))
 
 ;; pretty icons
 ;; remember to run command: all-the-icons-install-fonts
