@@ -368,10 +368,11 @@
     "my" '(yank-rectangle                  :which-key "yank multiple")
 
     ;; org-mode
-    "o"  '(:ignore t      :which-key "org-mode")
-    "oc" '(org-capture    :which-key "capture")
-    "og" '(org-agenda     :which-key "agenda")
-    "ot" '(org-time-stamp :which-key "timestamp")
+    "o"  '(:ignore t                     :which-key "org-mode")
+    "oc" '(org-capture                   :which-key "capture")
+    "og" '(org-agenda                    :which-key "agenda")
+    "ot" '(org-time-stamp                :which-key "timestamp")
+    "ob" '(org-insert-structure-template :which-key "block")
 
     ;; org-roam
     "r"  '(:ignore t          :which-key "org-roam")
