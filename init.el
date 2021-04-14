@@ -372,8 +372,8 @@
     "oc" '(org-capture                   :which-key "capture")
     "og" '(org-agenda                    :which-key "agenda")
     "ot" '(org-time-stamp                :which-key "timestamp")
-    "or" '(org-refile             :which-key "refile")
-    "oa" '(org-archive-subtree    :which-key "refile")
+    "or" '(org-refile                    :which-key "refile")
+    "oa" '(org-archive-subtree           :which-key "archive")
     "ob" '(org-insert-structure-template :which-key "block")
 
     ;; org-roam
