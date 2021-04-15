@@ -386,6 +386,7 @@
     "or" '(org-refile                    :which-key "refile")
     "oa" '(org-archive-subtree           :which-key "archive")
     "ob" '(org-insert-structure-template :which-key "block")
+    "os" '(org-sort                      :which-key "sort")
 
     ;; org-roam
     "r"  '(:ignore t          :which-key "org-roam")
