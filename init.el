@@ -422,4 +422,5 @@
 (my/leader-keys
   "t"  '(hydra-text-scale/body          :which-key "text")
   "mt" '(hydra-multiple-cursors/body    :which-key "this")
-  "oh"  '(hydra-org-heading/body         :which-key "org heading"))
+  "oh" '(hydra-org-heading/body         :which-key "org heading")
+  )
