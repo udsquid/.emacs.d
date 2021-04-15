@@ -354,7 +354,7 @@ I came out two version of bookmark, one is just to capture URL and title informa
 1. org-capture
 : javascript:location.href='org-protocol://capture?template=c&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.getSelection())
 2. org-capture (quote)
-: javascript:location.href='org-protocol://capture?template=cq&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.getSelection())
+: javascript:location.href='org-protocol://capture?template=q&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.getSelection())
 
 Reference:
 - [[http://kb.mozillazine.org/Register_protocol][MozillaZine Knowledge Base]]
