@@ -299,6 +299,63 @@ If you want to archive headings into another file, check =org-archive-location= 
 - Nat Eliason
   - [[https://www.nateliason.com/blog/roam][Roam: Why I Love It and How I Use It]]
 
+** Setup Org-protocol
+
+Used the following command to install =EmacsClient.app= on MacOS:
+
+#+begin_src shell
+brew install emacsclient --cask
+#+end_src
+
+And then I could test its functionality from shell (see /init.el/ for Emacs settings):
+
+#+begin_src shell
+emacsclient -n that "org-protocol:///capture?url=http%3a%2f%2fduckduckgo%2ecom&title=DuckDuckGo"
+#+end_src
+
+On Firefox, opened up a blank tab and enter ~about:config~ to enter advanced settings page, and set ~network.protocol-handler.external.org-protocol~ to ~true~.
+
+But ran into a problem that although Firefox seemed like to call =EmacsClient.app= but there's nothing on corresponding org file. After googled it around 2+ weeks, I still didn't get any progress.
+
+Then, on <2021-04-13 Tue> an idea poped on my head. Because both =emacsclient= (bundled with Emacs) and =EmacsClient= are pointed to the same path:
+
+#+begin_src shell :results output
+ls -l $(which emacsclient)
+#+end_src
+
+#+RESULTS:
+: lrwxr-xr-x  1 lab  wheel  54 11 24 14:14 /usr/local/bin/emacsclient -> /Applications/Emacs.app/Contents/MacOS/bin/emacsclient
+
+#+begin_src shell :results output
+ls -l $(which EmacsClient)
+#+end_src
+
+#+RESULTS:
+: lrwxr-xr-x  1 lab  wheel  54 11 24 14:14 /usr/local/bin/EmacsClient -> /Applications/Emacs.app/Contents/MacOS/bin/emacsclient
+
+Maybe the one, =emacsclient= could not work with Firefox. So I jumped into =/Applications/EmacsClient.app/Contents/MacOS= and backup =applet= first:
+
+#+begin_src shell :results output
+cd /Applications/EmacsClient.app/Contents/MacOS
+
+if [ ! -e applet.bak ]; then
+    cp -p applet applet.bak
+fi
+#+end_src
+
+And then used =Finder= to open and edit =/Applications/EmacsClient= with script editor like this:
+
+[[/Users/lab/Dropbox/mywiki/Fix wrong path in EmacsClient.png][Fix wrong path in EmacsClient.app]]
+
+Then, everything worked!
+
+I came out two version of bookmark, one is just to capture URL and title information, the other do the same thing but add selected text into capture buffer.
+
+1. org-capture
+: javascript:location.href='org-protocol://capture?template=c&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.getSelection())
+2. org-capture (quote)
+: javascript:location.href='org-protocol://capture?template=cq&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.getSelection())
+
 * Backlog
 
 - [[https://github.com/howardabrams/dot-files/blob/master/emacs-mail.org#sending-email][Sending Email]]
