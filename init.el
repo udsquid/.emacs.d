@@ -222,7 +222,7 @@
 	  ("c" "org-protocol-capture"
 	   entry (file ,(concat org-directory "inbox.org"))
 	   "* TODO [[%:link][%:description]]\n\n%u" :immediate-finish t)
-	  ("cq" "org-protocol-capture (with quote)"
+	  ("q" "org-protocol-capture (with quote)"
 	   entry (file ,(concat org-directory "inbox.org"))
 	   "* TODO [[%:link][%:description]]\n\n#+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n%u" :immediate-finish t)
 	  ))
