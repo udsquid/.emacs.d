@@ -29,7 +29,7 @@
  '(highlight-indent-guides-auto-character-face-perc 20)
  '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
-   '(hydra general org-roam undo-fu visual-fill-column org-bullets exec-path-from-shell vterm org org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
+   '(org-protocol hydra general org-roam undo-fu visual-fill-column org-bullets exec-path-from-shell vterm org org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
  '(persp-mode-prefix-key [8388720])
  '(persp-state-default-file (concat user-emacs-directory ".persp")))
 (custom-set-faces
@@ -207,14 +207,25 @@
   (setq org-refile-use-outline-path 'file)
   (setq org-refile-allow-creating-parent-nodes 'confirm))
 
-(defun org-setup-agenda ()
+(defun org-setup-org-protocol ()
   (setq org-directory "~/Dropbox/org/")
-  (setq org-agenda-files
-	(list
-	 (concat org-directory "inbox.org")))
+  (setq org-agenda-files (list (concat org-directory "inbox.org")))
+
+  (server-start)
+  (require 'org-protocol)
+
   (setq org-capture-templates
-	`(("i" "Inbox" entry (file ,(concat org-directory "inbox.org"))
-	   "* TODO %?"))))
+	`(("i" "Inbox"
+	   entry (file ,(concat org-directory "inbox.org"))
+	   "* TODO %?")
+	  ("c" "org-protocol-capture"
+	   entry (file ,(concat org-directory "inbox.org"))
+	   "* TODO [[%:link][%:description]]\n\n%u" :immediate-finish t)
+	  ("cq" "org-protocol-capture (with quote)"
+	   entry (file ,(concat org-directory "inbox.org"))
+	   "* TODO [[%:link][%:description]]\n\n#+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n%u" :immediate-finish t)
+	  ))
+  )
 
 (use-package org
   :bind ("C-c C-." . org-insert-structure-template)
@@ -226,7 +237,7 @@
   (setq org-log-into-drawer t)
   (org-setup-font)
   (org-setup-refile)
-  (org-setup-agenda)
+  (org-setup-org-protocol)
 
   ;; enable language execution
   (org-babel-do-load-languages 'org-babel-load-languages
