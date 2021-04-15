@@ -352,7 +352,7 @@ Then, everything worked!
 I came out two version of bookmark, one is just to capture URL and title information, the other do the same thing but add selected text into capture buffer.
 
 1. org-capture
-: javascript:location.href='org-protocol://capture?template=c&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.getSelection())
+: javascript:location.href='org-protocol://capture?template=c&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)
 2. org-quote
 : javascript:location.href='org-protocol://capture?template=q&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.getSelection())
 
