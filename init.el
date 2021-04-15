@@ -112,7 +112,8 @@
 
 ;; edit multiple lines at once
 (use-package multiple-cursors
-  :bind (("s-t" . mc/mark-next-like-this)))
+  :bind (("s-t" . mc/mark-next-like-this)
+	 ("s-r" . mc/mark-previous-like-this)))
 
 ;; pretty icons
 ;; remember to run command: all-the-icons-install-fonts
@@ -407,8 +408,10 @@
   (defhydra hydra-multiple-cursors (:timeout 4)
     "mark"
     ("n" mc/mark-next-like-this      "next")
+    ("p" mc/mark-previous-like-this  "prev")
     ("w" mc/mark-next-like-this-word "word")
-    ("a" mc/mark-all-like-this       "all"))
+    ("a" mc/mark-all-like-this       "all")
+    ("q" nil                         "finish" :exit t))
   (defhydra hydra-org-heading (:timeout 4)
     "heading"
     ("n" org-next-visible-heading        "next")
