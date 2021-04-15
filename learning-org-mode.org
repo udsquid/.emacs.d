@@ -356,6 +356,11 @@ I came out two version of bookmark, one is just to capture URL and title informa
 2. org-capture (quote)
 : javascript:location.href='org-protocol://capture?template=cq&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.getSelection())
 
+Reference:
+- [[http://kb.mozillazine.org/Register_protocol][MozillaZine Knowledge Base]]
+- [[https://mediaonfire.com/blog/2017_07_21_org_protocol_firefox.html][Firefox and org-protocol URL Capture]]
+- [[https://orgmode.org/worg/org-contrib/org-protocol.html][Worg]]
+
 * Backlog
 
 - [[https://github.com/howardabrams/dot-files/blob/master/emacs-mail.org#sending-email][Sending Email]]
