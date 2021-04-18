@@ -394,6 +394,15 @@
     "rf" '(org-roam-find-file :which-key "find file")
     "ri" '(org-roam-insert    :which-key "insert")
     "rb" '(org-roam           :which-key "org-roam buffer")
+
+    ;; window
+    "w"  '(:ignore t                                :which-key "window")
+    "wr" '(split-window-right-and-move-there-dammit :which-key "right")
+    "wd" '(split-window-down-and-move-there-dammit  :which-key "down")
+
+    ;; kill-ring
+    "k"  '(:ignore t           :which-key "kill-ring")
+    "ks" '(helm-show-kill-ring :which-key "show")
     )
   )
 
