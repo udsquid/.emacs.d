@@ -388,6 +388,7 @@
     "oa" '(org-archive-subtree           :which-key "archive")
     "ob" '(org-insert-structure-template :which-key "block")
     "os" '(org-sort                      :which-key "sort")
+    "on" '(org-add-note                  :which-key "note")
 
     ;; org-roam
     "r"  '(:ignore t          :which-key "org-roam")
