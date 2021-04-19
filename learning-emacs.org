@@ -3,11 +3,8 @@
 * Useful Commands
 
 - helm-occur
-- helm-show-kill-ring
 - completion-at-point
 - which-key-show-top-level
-- yank-rectangle
-  - kill in multiple-cursor and get out of it, then yank, it'll only yank the kill-ring from main cursor. If you want to yank all, use this command (=C-x r y=)
 - shell-command
 - run-python
 - python-shell-send-region
@@ -16,7 +13,6 @@
 - python-shell-send-file
 - what-cursor-position
 - list-colors-display
-- what-cursor-position
 
 ** Emacs
 
