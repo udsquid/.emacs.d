@@ -268,7 +268,7 @@
   :init
   (add-hook 'after-init-hook 'org-roam-mode)
   :config
-  (setq org-roam-directory "~/src/git/mywiki"))
+  (setq org-roam-directory "~/Dropbox/mywiki"))
 
 ;; better terminal
 (use-package vterm
