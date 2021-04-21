@@ -6,3 +6,5 @@ transient/
 auto-save-list/
 elpa/
 recentf
+org-roam.db
+bookmarks
