@@ -310,7 +310,7 @@ brew install emacsclient --cask
 And then I could test its functionality from shell (see /init.el/ for Emacs settings):
 
 #+begin_src shell
-emacsclient -n that "org-protocol:///capture?url=http%3a%2f%2fduckduckgo%2ecom&title=DuckDuckGo"
+emacsclient -n "org-protocol:///capture?url=http%3a%2f%2fduckduckgo%2ecom&title=DuckDuckGo"
 #+end_src
 
 On Firefox, opened up a blank tab and enter ~about:config~ to enter advanced settings page, and set ~network.protocol-handler.external.org-protocol~ to ~true~.
@@ -345,7 +345,7 @@ fi
 
 And then used =Finder= to open and edit =/Applications/EmacsClient= with script editor like this:
 
-[[/Users/lab/Dropbox/mywiki/Fix wrong path in EmacsClient.png][Fix wrong path in EmacsClient.app]]
+[[~/Dropbox/mywiki/images/Fix wrong path in EmacsClient.png][Fix wrong path in EmacsClient.app]]
 
 Then, everything worked!
 
