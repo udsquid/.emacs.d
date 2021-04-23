@@ -380,15 +380,18 @@
     "my" '(yank-rectangle                  :which-key "yank multiple")
 
     ;; org-mode
-    "o"  '(:ignore t                     :which-key "org-mode")
-    "oc" '(org-capture                   :which-key "capture")
-    "og" '(org-agenda                    :which-key "agenda")
-    "ot" '(org-time-stamp                :which-key "timestamp")
-    "or" '(org-refile                    :which-key "refile")
-    "oa" '(org-archive-subtree           :which-key "archive")
-    "ob" '(org-insert-structure-template :which-key "block")
-    "os" '(org-sort                      :which-key "sort")
-    "on" '(org-add-note                  :which-key "note")
+    "o"   '(:ignore t                     :which-key "org-mode")
+    "oc"  '(org-capture                   :which-key "capture")
+    "og"  '(org-agenda                    :which-key "agenda")
+    "ot"  '(org-time-stamp                :which-key "timestamp")
+    "or"  '(org-refile                    :which-key "refile")
+    "oa"  '(org-archive-subtree           :which-key "archive")
+    "ob"  '(org-insert-structure-template :which-key "block")
+    "os"  '(org-sort                      :which-key "sort")
+    "on"  '(org-add-note                  :which-key "note")
+    "ol"  '(:ignore t                     :which-key "link")
+    "ols" '(org-store-link                :which-key "store")
+    "oli" '(org-insert-link               :which-key "insert")
 
     ;; org-roam
     "r"  '(:ignore t          :which-key "org-roam")
