@@ -29,7 +29,7 @@
  '(highlight-indent-guides-auto-character-face-perc 20)
  '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
-   '(org-protocol hydra general org-roam undo-fu visual-fill-column org-bullets exec-path-from-shell vterm org org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
+   '(org-roam-protocol org-protocol hydra general org-roam undo-fu visual-fill-column org-bullets exec-path-from-shell vterm org org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
  '(persp-mode-prefix-key [8388720])
  '(persp-state-default-file (concat user-emacs-directory ".persp")))
 (custom-set-faces
@@ -268,7 +268,16 @@
   :init
   (add-hook 'after-init-hook 'org-roam-mode)
   :config
-  (setq org-roam-directory "~/Dropbox/mywiki"))
+  (require 'org-roam-protocol)
+  (setq org-roam-directory "~/Dropbox/mywiki")
+  (setq org-roam-capture-ref-templates
+	'(("r" "reference" plain (function org-roam--capture-get-point)
+	   "%?"
+	   :file-name "${slug}"
+	   :head "#+title: ${title}\n#+date: %U\n#+roam_key: ${ref}\n\n"
+	   :unnarrowed t))
+	)
+  )
 
 ;; better terminal
 (use-package vterm
