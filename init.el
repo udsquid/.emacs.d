@@ -230,7 +230,6 @@
   )
 
 (use-package org
-  :bind ("C-c C-." . org-insert-structure-template)
   :hook (org-mode . org-setup-mode)
   :config
   (setq org-confirm-babel-evaluate nil)
