@@ -200,7 +200,8 @@
 
 (defun org-setup-mode ()
   (visual-line-mode t)
-  (org-indent-mode))
+  (org-indent-mode)
+  (auto-revert-mode t))
 
 (defun org-setup-refile ()
   (setq org-refile-targets '((nil :maxlevel . 3)))
