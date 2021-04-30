@@ -322,16 +322,6 @@
 (global-unset-key (kbd "C-x C-p"))
 (global-set-key (kbd "C-x C-p C-f") 'project-find-file)
 
-(defun split-window-down-and-move-there-dammit ()
-  (interactive)
-  (split-window-below)
-  (windmove-down))
-
-(defun split-window-right-and-move-there-dammit ()
-  (interactive)
-  (split-window-right)
-  (windmove-right))
-
 ;; quick switch between two recent buffers
 (fset 'quick-switch-buffer [?\C-x ?b return])
 (global-set-key (kbd "s-f") 'quick-switch-buffer)
@@ -348,6 +338,35 @@
 (global-set-key (kbd "M-t") 'capitalize-word)
 
 (global-set-key (kbd "M-z") 'undo)
+
+;; helper functions
+(defun split-window-down-and-move-there-dammit ()
+  (interactive)
+  (split-window-below)
+  (windmove-down))
+
+(defun split-window-right-and-move-there-dammit ()
+  (interactive)
+  (split-window-right)
+  (windmove-right))
+
+(defun my/buffer-name ()
+  (interactive)
+  (let ((n (buffer-name)))
+    (kill-new n)
+    (message n)))
+
+(defun my/buffer-path ()
+  (interactive)
+  (let ((n default-directory))
+    (kill-new n)
+    (message n)))
+
+(defun my/buffer-full-name ()
+  (interactive)
+  (let ((n (buffer-file-name)))
+    (kill-new n)
+    (message n)))
 
 ;; key-binding manager
 (use-package general
@@ -406,6 +425,14 @@
     "rf" '(org-roam-find-file :which-key "find file")
     "ri" '(org-roam-insert    :which-key "insert")
     "rb" '(org-roam           :which-key "org-roam buffer")
+
+    ;; buffer
+    "b"  '(:ignore t               :which-key "buffer")
+    "bb" '(persp-switch-to-buffer* :which-key "switch")
+    "bk" '(persp-kill-buffer*      :which-key "kill")
+    "bn" '(my/buffer-name          :which-key "name")
+    "bp" '(my/buffer-path          :which-key "path")
+    "bf" '(my/buffer-full-name     :which-key "full name")
 
     ;; window
     "w"  '(:ignore t                                :which-key "window")
