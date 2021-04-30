@@ -368,6 +368,11 @@
     (kill-new n)
     (message n)))
 
+(defun my/jump-to-mark ()
+  (interactive)
+  (let ((current-prefix-arg 4))
+    (call-interactively #'set-mark-command)))
+
 ;; key-binding manager
 (use-package general
   :config
@@ -466,11 +471,7 @@
   (defhydra hydra-mark-ring (:timeout 4)
     "mark ring"
     ("o" org-mark-ring-goto "org")
-    ("e" (lambda ()
-	   (interactive)
-	   (let ((current-prefix-arg 4))
-	     (call-interactively #'set-mark-command)))
-     "emacs")
+    ("e" my/jump-to-mark    "emacs")
     ("q" nil                "finish" :exit t))
   (defhydra hydra-org-heading (:timeout 4)
     "heading"
@@ -485,6 +486,6 @@
 (my/leader-keys
   "t"  '(hydra-text-scale/body          :which-key "text")
   "mt" '(hydra-multiple-cursors/body    :which-key "this")
-  "r"  '(hydra-mark-ring/body           :which-key "mark ring")
+  "mr" '(hydra-mark-ring/body           :which-key "ring")
   "oh" '(hydra-org-heading/body         :which-key "org heading")
   )
