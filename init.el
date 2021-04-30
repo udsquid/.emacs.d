@@ -457,6 +457,6 @@
 (my/leader-keys
   "t"  '(hydra-text-scale/body          :which-key "text")
   "mt" '(hydra-multiple-cursors/body    :which-key "this")
-  "mr" '(hydra-mark-ring/body           :which-key "mark ring")
+  "r"  '(hydra-mark-ring/body           :which-key "mark ring")
   "oh" '(hydra-org-heading/body         :which-key "org heading")
   )
