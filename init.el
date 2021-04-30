@@ -395,7 +395,8 @@
     ;; file
     "f"  '(:ignore t                :which-key "file")
     "fo" '(find-file                :which-key "open")
-    "fp" '(ns-open-file-using-panel :which-key "open via window")
+    "fw" '(ns-open-file-using-panel :which-key "open via window")
+    "fp" '(project-find-file        :which-key "project")
 
     ;; multiple-cursors
     "m"  '(:ignore t                       :which-key "mark")
