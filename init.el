@@ -435,6 +435,15 @@
     ("w" mc/mark-next-like-this-word "word")
     ("a" mc/mark-all-like-this       "all")
     ("q" nil                         "finish" :exit t))
+  (defhydra hydra-mark-ring (:timeout 4)
+    "mark ring"
+    ("o" org-mark-ring-goto "org")
+    ("e" (lambda ()
+	   (interactive)
+	   (let ((current-prefix-arg 4))
+	     (call-interactively #'set-mark-command)))
+     "emacs")
+    ("q" nil                "finish" :exit t))
   (defhydra hydra-org-heading (:timeout 4)
     "heading"
     ("n" org-next-visible-heading        "next")
@@ -448,5 +457,6 @@
 (my/leader-keys
   "t"  '(hydra-text-scale/body          :which-key "text")
   "mt" '(hydra-multiple-cursors/body    :which-key "this")
+  "mr" '(hydra-mark-ring/body           :which-key "mark ring")
   "oh" '(hydra-org-heading/body         :which-key "org heading")
   )
