@@ -445,7 +445,7 @@
     "wr" '(split-window-right-and-move-there-dammit :which-key "right")
     "wd" '(split-window-down-and-move-there-dammit  :which-key "down")
     "wo" '(delete-other-windows                     :which-key "only")
-    "wc" '(delete-window                            :which-key "close")
+    "ww" '(delete-window                            :which-key "close")
 
     ;; kill-ring
     "k"  '(:ignore t           :which-key "kill-ring")
