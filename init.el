@@ -407,7 +407,7 @@
     "m"  '(:ignore t                       :which-key "mark")
     "me" '(mc/mark-more-like-this-extended :which-key "extended")
     "ml" '(mc/edit-lines                   :which-key "line")
-    "mr" '(mc/mark-all-in-region           :which-key "region")
+    "mg" '(mc/mark-all-in-region           :which-key "region")
     "my" '(yank-rectangle                  :which-key "yank multiple")
 
     ;; org-mode
