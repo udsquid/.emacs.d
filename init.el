@@ -269,6 +269,7 @@
   (setq org-roam-v2-ack t)
   :custom
   (org-roam-directory "~/Dropbox/mywiki")
+  (org-roam-completion-everywhere t)
   :config
   (org-roam-setup)
   (require 'org-roam-protocol)
