@@ -264,19 +264,28 @@
 (use-package visual-fill-column
   :hook (org-mode . org-setup-visual))
 
+;; (use-package org-roam
+;;   :init
+;;   (add-hook 'after-init-hook 'org-roam-mode)
+;;   :config
+;;   (require 'org-roam-protocol)
+;;   (setq org-roam-directory "~/Dropbox/mywiki")
+;;   (setq org-roam-capture-ref-templates
+;; 	'(("r" "reference" plain (function org-roam--capture-get-point)
+;; 	   "%?"
+;; 	   :file-name "${slug}"
+;; 	   :head "#+title: ${title}\n#+date: %U\n#+roam_key: ${ref}\n\n"
+;; 	   :unnarrowed t))
+;; 	)
+;;   )
+
 (use-package org-roam
   :init
-  (add-hook 'after-init-hook 'org-roam-mode)
+  (setq org-roam-v2-ack t)
+  :custom
+  (org-roam-directory "~/Dropbox/mywiki-org-roam-2-test")
   :config
-  (require 'org-roam-protocol)
-  (setq org-roam-directory "~/Dropbox/mywiki")
-  (setq org-roam-capture-ref-templates
-	'(("r" "reference" plain (function org-roam--capture-get-point)
-	   "%?"
-	   :file-name "${slug}"
-	   :head "#+title: ${title}\n#+date: %U\n#+roam_key: ${ref}\n\n"
-	   :unnarrowed t))
-	)
+  (org-roam-setup)
   )
 
 ;; better terminal
@@ -427,10 +436,10 @@
     "oo"  '(org-open-at-point             :which-key "open")
 
     ;; org-roam
-    "r"  '(:ignore t          :which-key "org-roam")
-    "rf" '(org-roam-find-file :which-key "find file")
-    "ri" '(org-roam-insert    :which-key "insert")
-    "rb" '(org-roam           :which-key "org-roam buffer")
+    "r"  '(:ignore t              :which-key "org-roam")
+    "rf" '(org-roam-node-find     :which-key "find file")
+    "ri" '(org-roam-node-insert   :which-key "insert")
+    "rb" '(org-roam-buffer-toggle :which-key "org-roam buffer")
 
     ;; buffer
     "b"  '(:ignore t               :which-key "buffer")
