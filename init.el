@@ -264,28 +264,20 @@
 (use-package visual-fill-column
   :hook (org-mode . org-setup-visual))
 
-;; (use-package org-roam
-;;   :init
-;;   (add-hook 'after-init-hook 'org-roam-mode)
-;;   :config
-;;   (require 'org-roam-protocol)
-;;   (setq org-roam-directory "~/Dropbox/mywiki")
-;;   (setq org-roam-capture-ref-templates
-;; 	'(("r" "reference" plain (function org-roam--capture-get-point)
-;; 	   "%?"
-;; 	   :file-name "${slug}"
-;; 	   :head "#+title: ${title}\n#+date: %U\n#+roam_key: ${ref}\n\n"
-;; 	   :unnarrowed t))
-;; 	)
-;;   )
-
 (use-package org-roam
   :init
   (setq org-roam-v2-ack t)
   :custom
-  (org-roam-directory "~/Dropbox/mywiki-org-roam-2-test")
+  (org-roam-directory "~/Dropbox/mywiki")
   :config
   (org-roam-setup)
+  (require 'org-roam-protocol)
+  (setq org-roam-capture-ref-templates
+	'(("r" "ref" plain
+	   "%?"
+	   :if-new (file+head "${slug}.org"
+			      "#+title: ${title}\n#+date: %U\n")
+	   :unnarrowed t)))
   )
 
 ;; better terminal
