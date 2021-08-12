@@ -341,6 +341,8 @@
 
 (global-set-key (kbd "M-z") 'undo)
 
+(global-set-key (kbd "M-.") 'completion-at-point)
+
 ;; helper functions
 (defun split-window-down-and-move-there-dammit ()
   (interactive)
