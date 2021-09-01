@@ -271,7 +271,7 @@
   (org-roam-directory "~/Dropbox/mywiki")
   (org-roam-completion-everywhere t)
   :config
-  (org-roam-setup)
+  (org-roam-db-autosync-mode)
   (require 'org-roam-protocol)
   (setq org-roam-capture-ref-templates
 	'(("r" "ref" plain
