@@ -429,6 +429,7 @@
     "ols" '(org-store-link                :which-key "store")
     "oli" '(org-insert-link               :which-key "insert")
     "oo"  '(org-open-at-point             :which-key "open")
+    "op"  '(org-set-property              :which-key "property")
 
     ;; org-roam
     "r"  '(:ignore t              :which-key "org-roam")
