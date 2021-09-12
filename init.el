@@ -435,15 +435,17 @@
     "op"  '(org-set-property              :which-key "property")
 
     ;; org-roam
-    "r"     '(:ignore t                      :which-key "org-roam")
-    "rf"    '(org-roam-node-find             :which-key "find file")
-    "ri"    '(org-roam-node-insert           :which-key "insert")
-    "rb"    '(org-roam-buffer-toggle         :which-key "org-roam buffer")
-    "rd"    '(:ignore t                      :which-key "dailies")
-    "rdc"   '(:ignore t                      :which-key "capture")
-    "rdct"  '(org-roam-dailies-capture-today :which-key "today")
-    "rdg"   '(:ignore t                      :which-key "goto")
-    "rdgt"  '(org-roam-dailies-goto-today    :which-key "today")
+    "r"  '(:ignore t                      :which-key "org-roam")
+    "rf" '(org-roam-node-find             :which-key "find file")
+    "ri" '(org-roam-node-insert           :which-key "insert")
+    "rb" '(org-roam-buffer-toggle         :which-key "org-roam buffer")
+
+    ;; org-roam-dailies
+    "d"   '(:ignore t                      :which-key "dailies")
+    "dc"  '(:ignore t                      :which-key "capture")
+    "dct" '(org-roam-dailies-capture-today :which-key "today")
+    "dg"  '(:ignore t                      :which-key "goto")
+    "dgt" '(org-roam-dailies-goto-today    :which-key "today")
 
     ;; buffer
     "b"  '(:ignore t               :which-key "buffer")
@@ -502,9 +504,9 @@
   )
 
 (my/leader-keys
-  "t"   '(hydra-text-scale/body             :which-key "text")
-  "mt"  '(hydra-multiple-cursors/body       :which-key "this")
-  "mr"  '(hydra-mark-ring/body              :which-key "ring")
-  "oh"  '(hydra-org-heading/body            :which-key "org heading")
-  "rdt" '(hydra-org-roam-day-traversal/body :which-key "day traversal")
+  "t"  '(hydra-text-scale/body             :which-key "text")
+  "mt" '(hydra-multiple-cursors/body       :which-key "this")
+  "mr" '(hydra-mark-ring/body              :which-key "ring")
+  "oh" '(hydra-org-heading/body            :which-key "org heading")
+  "dt" '(hydra-org-roam-day-traversal/body :which-key "day traversal")
   )
