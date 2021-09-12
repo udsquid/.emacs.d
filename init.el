@@ -270,6 +270,9 @@
   :custom
   (org-roam-directory "~/Dropbox/mywiki")
   (org-roam-completion-everywhere t)
+  (org-roam-dailies-capture-templates
+   '(("d" "default" entry "\n* %<%I:%M %p>: %?"
+      :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n"))))
   :config
   (org-roam-db-autosync-mode)
   (require 'org-roam-protocol)
@@ -432,10 +435,17 @@
     "op"  '(org-set-property              :which-key "property")
 
     ;; org-roam
-    "r"  '(:ignore t              :which-key "org-roam")
-    "rf" '(org-roam-node-find     :which-key "find file")
-    "ri" '(org-roam-node-insert   :which-key "insert")
-    "rb" '(org-roam-buffer-toggle :which-key "org-roam buffer")
+    "r"  '(:ignore t                      :which-key "org-roam")
+    "rf" '(org-roam-node-find             :which-key "find file")
+    "ri" '(org-roam-node-insert           :which-key "insert")
+    "rb" '(org-roam-buffer-toggle         :which-key "org-roam buffer")
+
+    ;; org-roam-dailies
+    "d"   '(:ignore t                      :which-key "dailies")
+    "dc"  '(:ignore t                      :which-key "capture")
+    "dct" '(org-roam-dailies-capture-today :which-key "today")
+    "dg"  '(:ignore t                      :which-key "goto")
+    "dgt" '(org-roam-dailies-goto-today    :which-key "today")
 
     ;; buffer
     "b"  '(:ignore t               :which-key "buffer")
@@ -486,11 +496,17 @@
     ("b" org-backward-heading-same-level "backward")
     ("u" (org-up-heading-safe)           "up")
     ("q" nil                             "finish" :exit t))
+  (defhydra hydra-org-roam-day-traversal (:timeout 4)
+    "day"
+    ("n" org-roam-dailies-goto-next-note     "next")
+    ("p" org-roam-dailies-goto-previous-note "prev")
+    ("q" nil                                 "finish" :exit t))
   )
 
 (my/leader-keys
-  "t"  '(hydra-text-scale/body          :which-key "text")
-  "mt" '(hydra-multiple-cursors/body    :which-key "this")
-  "mr" '(hydra-mark-ring/body           :which-key "ring")
-  "oh" '(hydra-org-heading/body         :which-key "org heading")
+  "t"  '(hydra-text-scale/body             :which-key "text")
+  "mt" '(hydra-multiple-cursors/body       :which-key "this")
+  "mr" '(hydra-mark-ring/body              :which-key "ring")
+  "oh" '(hydra-org-heading/body            :which-key "org heading")
+  "dt" '(hydra-org-roam-day-traversal/body :which-key "day traversal")
   )
