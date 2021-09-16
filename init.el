@@ -29,7 +29,7 @@
  '(highlight-indent-guides-auto-character-face-perc 20)
  '(highlight-indent-guides-method 'bitmap)
  '(package-selected-packages
-   '(org-roam-protocol org-protocol hydra general org-roam undo-fu visual-fill-column org-bullets exec-path-from-shell vterm org org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
+   '(marginalia vertico org-roam-protocol org-protocol hydra general org-roam undo-fu visual-fill-column org-bullets exec-path-from-shell vterm org org-tempo magit ivy-rich restclient smartparens ws-butler anzu perspective doom-modeline all-the-icons multiple-cursors dashboard highlight-indent-guides which-key expand-region helm helpful avy cyberpunk-theme use-package))
  '(persp-mode-prefix-key [8388720])
  '(persp-state-default-file (concat user-emacs-directory ".persp")))
 (custom-set-faces
@@ -68,12 +68,12 @@
 (use-package helpful)
 
 ;; powerful search framework
-(use-package helm
-  :bind (("M-x"             . helm-M-x)
-	 ([remap find-file] . helm-find-files)
-	 ([remap occur]     . helm-occur))
-  :init
-  (helm-mode t))
+;; (use-package helm
+;;   :bind (("M-x"             . helm-M-x)
+;; 	 ([remap find-file] . helm-find-files)
+;; 	 ([remap occur]     . helm-occur))
+;;   :init
+;;   (helm-mode t))
 
 ;; disable auto save buffer
 (setq auto-save-default nil)
@@ -309,6 +309,18 @@
 (use-package undo-fu
   :bind ("M-Z" . undo-fu-only-redo))
 
+(use-package vertico
+  :init
+  (vertico-mode))
+
+(use-package marginalia
+  :after vertico
+  :ensure t
+  :custom
+  (marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
+  :init
+  (marginalia-mode))
+
 ;; --- handy custom keys ---
 
 ;; ### cursor moving ###
@@ -463,8 +475,8 @@
     "ww" '(delete-window                            :which-key "close")
 
     ;; kill-ring
-    "k"  '(:ignore t           :which-key "kill-ring")
-    "ks" '(helm-show-kill-ring :which-key "show")
+    ;; "k"  '(:ignore t           :which-key "kill-ring")
+    ;; "ks" '(helm-show-kill-ring :which-key "show")
     )
   )
 
