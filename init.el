@@ -433,6 +433,9 @@
     "oli" '(org-insert-link               :which-key "insert")
     "oo"  '(org-open-at-point             :which-key "open")
     "op"  '(org-set-property              :which-key "property")
+    "oe"  '(:ignore t                     :which-key "entity")
+    "oep" '(org-toggle-pretty-entities    :which-key "pretty")
+    "oeh" '(org-entities-help             :which-key "help")
 
     ;; org-roam
     "r"  '(:ignore t                      :which-key "org-roam")
