@@ -456,11 +456,13 @@
     "rb" '(org-roam-buffer-toggle         :which-key "org-roam buffer")
 
     ;; org-roam-dailies
-    "d"   '(:ignore t                      :which-key "dailies")
-    "dc"  '(:ignore t                      :which-key "capture")
-    "dct" '(org-roam-dailies-capture-today :which-key "today")
-    "dg"  '(:ignore t                      :which-key "goto")
-    "dgt" '(org-roam-dailies-goto-today    :which-key "today")
+    "d"   '(:ignore t                          :which-key "dailies")
+    "dc"  '(:ignore t                          :which-key "capture")
+    "dct" '(org-roam-dailies-capture-today     :which-key "today")
+    "dcy" '(org-roam-dailies-capture-yesterday :which-key "yesterday")
+    "dg"  '(:ignore t                          :which-key "goto")
+    "dgt" '(org-roam-dailies-goto-today        :which-key "today")
+    "dgy" '(org-roam-dailies-goto-yesterday    :which-key "yesterday")
 
     ;; buffer
     "b"  '(:ignore t               :which-key "buffer")
