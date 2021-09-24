@@ -293,6 +293,7 @@
          ("s-y" . org-download-yank)))
   :config
   (setq org-download-screenshot-method "screencapture -i %s")
+  (setq org-download-image-dir "~/Dropbox/mywiki/images")
   )
 
 ;; better terminal
